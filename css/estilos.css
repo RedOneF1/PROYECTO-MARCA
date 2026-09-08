@@ -1,0 +1,1132 @@
+/* =====================================================
+   NOVA — BRANDBOOK DIGITAL / MANUAL DE IDENTIDAD EDITORIAL
+   Dirección de Arte: Editorial Asimétrica / Full Viewport Canvas
+   Inspiración: Grin Brandbook & Swiss Avant-Garde Design
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   01. SISTEMA CROMÁTICO & DESIGN TOKENS
+   ===================================================== */
+:root {
+    /* Paleta Editorial Propia de NOVA */
+    --c-obsidian: #08090c;       /* Negro Carbón Profundo */
+    --c-noir: #12141a;           /* Grafito Oscuro */
+    --c-chalk: #f5f6f8;          /* Blanco Tiza / Marfil Editorial */
+    --c-pure-white: #ffffff;     /* Blanco Puro */
+    --c-cobalt: #0824e0;         /* Azul Cobalto Eléctrico (Vanguardia) */
+    --c-lime: #c8ff00;           /* Verde Lima Ácido / Volt (Acento de Precisión) */
+    --c-gray-100: #e9ecf1;
+    --c-gray-300: #cbcfd8;
+    --c-gray-500: #7b8192;
+    --c-gray-700: #2d303a;
+
+    /* Tipografías */
+    --font-display: 'Montserrat', sans-serif;
+    --font-tech: 'Space Grotesk', monospace;
+
+    /* Dinámicas & Transiciones */
+    --bezier-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast: all 0.25s var(--bezier-editorial);
+    --t-smooth: all 0.6s var(--bezier-editorial);
+}
+
+/* =====================================================
+   02. RESET & REGLAS DE LIENZO (FULL VIEWPORT)
+   ===================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--c-chalk);
+}
+
+body {
+    background-color: var(--c-chalk);
+    color: var(--c-obsidian);
+    font-family: var(--font-display);
+    line-height: 1.5;
+    overflow-x: hidden;
+    width: 100vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: var(--c-lime);
+    color: var(--c-obsidian);
+}
+
+/* Barra superior de lectura */
+#read-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: var(--c-cobalt);
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+}
+
+/* Toast de notificación de copiado */
+#toast-notice {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(70px);
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+    border-left: 3px solid var(--c-lime);
+    padding: 12px 28px;
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--t-smooth);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+#toast-notice.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* =====================================================
+   03. NAVEGACIÓN FIJA MINIMALISTA
+   ===================================================== */
+.editorial-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 246, 248, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(8, 9, 12, 0.08);
+    z-index: 999;
+    transition: var(--t-fast);
+}
+
+.editorial-nav.nav-dark {
+    background: rgba(8, 9, 12, 0.88);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    color: var(--c-chalk);
+}
+
+.editorial-nav.nav-dark .brand-mark,
+.editorial-nav.nav-dark .nav-indicator {
+    color: var(--c-chalk);
+}
+
+.brand-mark {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--c-obsidian);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-mark-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--c-cobalt);
+    border-radius: 50%;
+}
+
+.nav-indicator {
+    font-family: var(--font-tech);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-chapter-badge {
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    border-radius: 2px;
+}
+
+.editorial-nav.nav-dark .nav-chapter-badge {
+    background: var(--c-lime);
+    color: var(--c-obsidian);
+}
+
+/* =====================================================
+   04. CONTENEDORES EDITORIALES FULL-BLEED
+   ===================================================== */
+.brandbook-spread {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    padding: 130px 4vw 100px;
+    border-bottom: 1px solid rgba(8, 9, 12, 0.12);
+}
+
+.spread-fullscreen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spread-dark {
+    background-color: var(--c-obsidian);
+    color: var(--c-chalk);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.spread-chalk {
+    background-color: var(--c-chalk);
+    color: var(--c-obsidian);
+}
+
+.spread-cobalt {
+    background-color: var(--c-cobalt);
+    color: var(--c-chalk);
+}
+
+/* Encabezados de capítulo editorial */
+.chapter-tag {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--c-gray-500);
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.spread-dark .chapter-tag {
+    color: var(--c-gray-400);
+}
+
+.spread-cobalt .chapter-tag {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Metadatos técnicos en esquinas */
+.corner-spec {
+    position: absolute;
+    font-family: var(--font-tech);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--c-gray-500);
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.corner-spec.top-right {
+    top: 90px;
+    right: 4vw;
+}
+
+.corner-spec.bottom-right {
+    bottom: 30px;
+    right: 4vw;
+}
+
+/* Línea de corte / regla que atraviesa el viewport */
+.viewport-rule {
+    width: 100%;
+    height: 1px;
+    background: rgba(8, 9, 12, 0.12);
+    margin: 40px 0;
+}
+
+.spread-dark .viewport-rule {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* =====================================================
+   SECCIÓN 00 — PORTADA EDITORIAL (100VW / 100VH)
+   ===================================================== */
+.hero-spread {
+    padding-top: 140px;
+    padding-bottom: 50px;
+    background: var(--c-chalk);
+    position: relative;
+}
+
+.hero-giant-title {
+    font-size: clamp(5.5rem, 21vw, 24rem);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+    color: var(--c-obsidian);
+    display: block;
+    margin: 10px 0 30px;
+    user-select: none;
+}
+
+.hero-asymmetric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-concept-phrase {
+    font-size: clamp(1.8rem, 4.5vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    max-width: 65vw;
+    color: var(--c-noir);
+}
+
+.hero-meta-block {
+    text-align: right;
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: var(--c-gray-600);
+}
+
+.hero-scroll-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--c-obsidian);
+    text-decoration: none;
+    animation: floatArrow 2.5s infinite ease-in-out;
+}
+
+@keyframes floatArrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* =====================================================
+   SECCIÓN 01 — ÍNDICE EDITORIAL DEL BRANDBOOK
+   ===================================================== */
+.toc-spread {
+    padding: 100px 4vw;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.toc-horizontal-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 50px;
+}
+
+.toc-link-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 30px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+    color: var(--c-chalk);
+    transition: var(--t-fast);
+}
+
+.toc-link-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+    padding-left: 32px;
+    color: var(--c-lime);
+}
+
+.toc-idx {
+    font-family: var(--font-tech);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--c-gray-500);
+}
+
+.toc-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* =====================================================
+   SECCIÓN 02 — 01 / CONCEPTO (ASIMETRÍA PURA)
+   ===================================================== */
+.concept-spread {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--c-chalk);
+}
+
+.concept-watermark-number {
+    position: absolute;
+    top: 30px;
+    right: 3vw;
+    font-size: clamp(10rem, 28vw, 32rem);
+    font-weight: 900;
+    color: rgba(8, 9, 12, 0.04);
+    line-height: 0.75;
+    user-select: none;
+    pointer-events: none;
+}
+
+.concept-editorial-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 8vw;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.concept-huge-statement {
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--c-obsidian);
+}
+
+.concept-narrative-block {
+    padding-top: 20px;
+}
+
+.concept-narrative-block p {
+    font-size: 1.15rem;
+    color: var(--c-gray-600);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.concept-semantic-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.semantic-badge {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border: 1px solid var(--c-gray-300);
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   SECCIÓN 03 — 02 / IDENTIDAD (BLOQUE DEL 60VW)
+   ===================================================== */
+.identity-spread {
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.identity-left-block {
+    width: 62vw;
+    background: var(--c-noir);
+    padding: 140px 5vw 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.identity-right-block {
+    width: 38vw;
+    padding: 140px 4vw 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--c-obsidian);
+}
+
+.identity-wordmark-large {
+    font-size: clamp(4rem, 13vw, 12rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--c-chalk);
+}
+
+.identity-blueprint-spec {
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    line-height: 2;
+    color: var(--c-gray-400);
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 30px;
+}
+
+.vertical-brand-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--c-lime);
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   SECCIÓN 04 — 03 / COLOR (SUPERFICIES DE 100VW)
+   ===================================================== */
+.color-spread {
+    padding: 120px 0 0;
+    background: var(--c-chalk);
+}
+
+.color-header-pad {
+    padding: 0 4vw 60px;
+}
+
+.color-landscapes-container {
+    width: 100vw;
+    display: flex;
+    min-height: 520px;
+}
+
+.color-plane {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--t-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-plane:hover {
+    flex-grow: 1.5;
+}
+
+/* Proporciones asimétricas */
+.plane-obsidian {
+    flex: 4;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.plane-cobalt {
+    flex: 3;
+    background: var(--c-cobalt);
+    color: var(--c-chalk);
+}
+
+.plane-lime {
+    flex: 2;
+    background: var(--c-lime);
+    color: var(--c-obsidian);
+}
+
+.plane-chalk {
+    flex: 2;
+    background: var(--c-pure-white);
+    color: var(--c-obsidian);
+    border-left: 1px solid var(--c-gray-200);
+}
+
+.plane-name {
+    font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.plane-specs {
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    line-height: 2;
+}
+
+.plane-copy-cue {
+    font-family: var(--font-tech);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* =====================================================
+   SECCIÓN 05 — 04 / TYPOGRAPHY (ESCULTURA TIPOGRÁFICA)
+   ===================================================== */
+.typography-spread {
+    padding: 130px 4vw;
+    background: var(--c-pure-white);
+}
+
+.type-giant-canvas {
+    position: relative;
+    margin: 40px 0 80px;
+}
+
+.type-giant-letters {
+    font-size: clamp(6rem, 24vw, 28rem);
+    font-weight: 900;
+    line-height: 0.75;
+    letter-spacing: -0.07em;
+    color: var(--c-obsidian);
+    user-select: none;
+}
+
+.type-cross-statement {
+    font-size: clamp(1.8rem, 4.2vw, 4.8rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin: 40px 0;
+    max-width: 80vw;
+}
+
+.type-runway-ticker {
+    width: 100vw;
+    margin-left: -4vw;
+    padding: 24px 0;
+    border-top: 1px solid var(--c-obsidian);
+    border-bottom: 1px solid var(--c-obsidian);
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker-inner {
+    display: inline-block;
+    animation: tickerLoop 30s linear infinite;
+}
+
+@keyframes tickerLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Probador tipográfico editorial integrado */
+.type-live-lab {
+    margin-top: 70px;
+    padding: 50px 0;
+    border-top: 1px solid rgba(8, 9, 12, 0.12);
+}
+
+.type-lab-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.type-lab-input {
+    flex: 1;
+    min-width: 280px;
+    border: none;
+    border-bottom: 2px solid var(--c-obsidian);
+    background: transparent;
+    padding: 10px 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--c-obsidian);
+    outline: none;
+}
+
+.type-lab-output {
+    font-size: clamp(2.2rem, 5vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+/* =====================================================
+   SECCIÓN 06 — 05 / SISTEMA GRÁFICO (SVG SYSTEM)
+   ===================================================== */
+.graphic-spread {
+    background: var(--c-chalk);
+    padding: 130px 4vw 100px;
+}
+
+.svg-architectural-viewport {
+    width: 100%;
+    min-height: 480px;
+    background: var(--c-pure-white);
+    border: 1px solid rgba(8, 9, 12, 0.12);
+    position: relative;
+    padding: 60px 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.svg-canvas-embed {
+    width: 100%;
+    height: 320px;
+}
+
+.graphic-principles-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.principle-item h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.principle-item p {
+    font-size: 0.95rem;
+    color: var(--c-gray-600);
+}
+
+/* =====================================================
+   SECCIÓN 07 — 06 / COMPOSICIONES EDITORIALES (SPREADS)
+   ===================================================== */
+.compositions-spread {
+    padding: 130px 0;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.composition-sheets-canvas {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 50px;
+}
+
+.editorial-poster-sheet {
+    min-height: 580px;
+    padding: 60px 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: var(--t-smooth);
+}
+
+.editorial-poster-sheet:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sheet-dark {
+    background: var(--c-obsidian);
+}
+
+.sheet-chalk {
+    background: var(--c-chalk);
+    color: var(--c-obsidian);
+}
+
+.sheet-cobalt {
+    background: var(--c-cobalt);
+    color: var(--c-chalk);
+}
+
+.sheet-num {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sheet-hero-word {
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+}
+
+/* =====================================================
+   SECCIÓN 08 — 07 / APLICACIONES (EDITORIAL LAYOUT)
+   ===================================================== */
+.applications-spread {
+    padding: 140px 4vw;
+    background: var(--c-chalk);
+}
+
+.editorial-mockup-arrangement {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 5vw;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.mockup-frame-large {
+    position: relative;
+    border: 1px solid rgba(8, 9, 12, 0.12);
+    background: var(--c-pure-white);
+    padding: 16px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+}
+
+.mockup-frame-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mockup-editorial-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mockup-frame-secondary {
+    border: 1px solid rgba(8, 9, 12, 0.12);
+    background: var(--c-pure-white);
+    padding: 12px;
+}
+
+.mockup-frame-secondary img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mockup-story-text h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+}
+
+/* =====================================================
+   SECCIÓN 09 — 08 / DIGITAL (UI SYSTEM SPECIMEN)
+   ===================================================== */
+.digital-spread {
+    padding: 130px 4vw;
+    background: var(--c-pure-white);
+}
+
+.ui-specimen-strip {
+    width: 100%;
+    border-top: 1px solid var(--c-obsidian);
+    border-bottom: 1px solid var(--c-obsidian);
+    padding: 60px 0;
+    margin: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ui-specimen-group span {
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    color: var(--c-gray-500);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.nova-editorial-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--t-fast);
+    border: none;
+}
+
+.btn-solid-noir {
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.btn-solid-noir:hover {
+    background: var(--c-cobalt);
+    color: var(--c-pure-white);
+}
+
+.btn-outline-noir {
+    background: transparent;
+    border: 2px solid var(--c-obsidian);
+    color: var(--c-obsidian);
+}
+
+.btn-outline-noir:hover {
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.btn-solid-lime {
+    background: var(--c-lime);
+    color: var(--c-obsidian);
+}
+
+.btn-solid-lime:hover {
+    background: var(--c-obsidian);
+    color: var(--c-lime);
+}
+
+/* =====================================================
+   SECCIÓN 10 — 09 / VOICE (DIRECTRICES VERBALES)
+   ===================================================== */
+.voice-spread {
+    padding: 140px 4vw;
+    background: var(--c-chalk);
+}
+
+.voice-editorial-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--c-obsidian);
+    border-bottom: 1px solid var(--c-obsidian);
+    margin: 50px 0;
+}
+
+.voice-column {
+    padding: 60px 40px;
+    border-right: 1px solid var(--c-obsidian);
+}
+
+.voice-column:last-child {
+    border-right: none;
+}
+
+.voice-column.voice-tone-col {
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+}
+
+.voice-col-kicker {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.voice-giant-words {
+    font-size: clamp(2rem, 3.8vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.voice-giant-words.tone-lime {
+    color: var(--c-lime);
+}
+
+/* =====================================================
+   SECCIÓN 11 — 10 / CIERRE (FINAL MONUMENTAL)
+   ===================================================== */
+.cierre-spread {
+    min-height: 100vh;
+    padding: 140px 4vw 60px;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cierre-monumental-title {
+    font-size: clamp(6rem, 24vw, 26rem);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.06em;
+    color: var(--c-chalk);
+    user-select: none;
+}
+
+.cierre-sub-quote {
+    font-size: clamp(1.8rem, 4vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--c-lime);
+    margin-top: 20px;
+}
+
+.cierre-studio-colophon {
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    color: var(--c-gray-400);
+}
+
+.cierre-top-link {
+    color: var(--c-chalk);
+    text-decoration: none;
+    font-family: var(--font-tech);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cierre-top-link:hover {
+    color: var(--c-lime);
+}
+
+/* =====================================================
+   12. MICRO-ANIMACIONES AL SCROLL (INTERSECTION OBSERVER)
+   ===================================================== */
+.reveal-fade {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.85s var(--bezier-editorial), transform 0.85s var(--bezier-editorial);
+    will-change: opacity, transform;
+}
+
+.reveal-fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-fade.delay-1 { transition-delay: 0.12s; }
+.reveal-fade.delay-2 { transition-delay: 0.24s; }
+
+/* Botón volver arriba flotante */
+.editorial-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 4vw;
+    width: 48px;
+    height: 48px;
+    background: var(--c-obsidian);
+    color: var(--c-chalk);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: var(--t-fast);
+}
+
+.editorial-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.editorial-top-btn:hover {
+    background: var(--c-lime);
+    color: var(--c-obsidian);
+}
+
+/* =====================================================
+   13. RESPONSIVE REAL (IPHONE FIRST & DESKTOP CANVAS)
+   ===================================================== */
+@media (max-width: 991px) {
+    .brandbook-spread {
+        padding: 100px 5vw 70px;
+    }
+    .concept-editorial-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .identity-spread {
+        flex-direction: column;
+    }
+    .identity-left-block,
+    .identity-right-block {
+        width: 100%;
+        padding: 80px 5vw;
+    }
+    .color-landscapes-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .color-plane {
+        min-height: 200px;
+    }
+    .editorial-mockup-arrangement {
+        grid-template-columns: 1fr;
+    }
+    .voice-editorial-strip {
+        grid-template-columns: 1fr;
+    }
+    .voice-column {
+        border-right: none;
+        border-bottom: 1px solid var(--c-obsidian);
+    }
+}
+
+@media (max-width: 576px) {
+    .brandbook-spread {
+        padding: 80px 5vw 50px;
+    }
+    .hero-giant-title {
+        font-size: 4.8rem;
+    }
+    .hero-concept-phrase {
+        max-width: 100%;
+        font-size: 1.6rem;
+    }
+    .type-giant-letters {
+        font-size: 5rem;
+    }
+    .cierre-monumental-title {
+        font-size: 5.2rem;
+    }
+    .toc-link-row {
+        padding: 20px 15px;
+    }
+    .toc-name {
+        font-size: 1.25rem;
+    }
+    .corner-spec {
+        display: none;
+    }
+}

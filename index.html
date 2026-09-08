@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA — Manual de Identidad Visual & Brandbook Digital</title>
+    <meta name="description" content="Manual de Identidad Visual y Brandbook Digital de NOVA. Dirección de arte editorial, sistema tipográfico, paleta cromática, arquitectura de marca y directrices de diseño contemporáneo.">
+
+    <!-- Tipografías: Montserrat & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de Estilos Editorial Asimétrica -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- Línea superior de avance de lectura -->
+    <div id="read-progress"></div>
+
+    <!-- Notificación toast minimalista -->
+    <div id="toast-notice">
+        <span id="toast-msg">CÓDIGO COPIADO</span>
+    </div>
+
+    <!-- =====================================================
+         NAVEGACIÓN FIJA MINIMALISTA (ADAPTATIVA)
+    ====================================================== -->
+    <header class="editorial-nav" id="mainNav">
+        <a href="#portada" class="brand-mark" aria-label="Portada NOVA">
+            NOVA
+            <span class="brand-mark-dot"></span>
+        </a>
+
+        <div class="nav-indicator">
+            <span class="d-none d-sm-inline" style="font-size:0.75rem; color:inherit; opacity:0.6;">BRANDBOOK DIGITAL</span>
+            <span class="nav-chapter-badge" id="navCounter">01 / 09</span>
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         SECCIÓN 00 — PORTADA EDITORIAL (100VW / 100VH)
+    ====================================================== -->
+    <section id="portada" class="brandbook-spread hero-spread spread-fullscreen" data-chapter="01 / 09" data-nav-style="light">
+        <span class="corner-spec top-right">[ IDENTITY SPEC // 2026 ]</span>
+        <span class="corner-spec bottom-right">+ REF. BOGOTÁ / COLOMBIA +</span>
+
+        <div class="hero-asymmetric-row reveal-fade">
+            <div>
+                <span class="chapter-tag">SISTEMA DE IDENTIDAD VISUAL</span>
+                <p class="mono-meta mb-0" style="font-size:0.85rem; letter-spacing:2px; font-weight:700;">MANUAL DE MARCA — EDICIÓN 2026</p>
+            </div>
+            <div class="hero-meta-block">
+                <p>COORD: 4°35'N 74°04'W<br>SISTEMA: GEOMÉTRICO ASIMÉTRICO</p>
+            </div>
+        </div>
+
+        <div class="my-auto py-4">
+            <span class="hero-giant-title reveal-fade">NOVA</span>
+            <h1 class="hero-concept-phrase reveal-fade delay-1">
+                "Una identidad creada para evolucionar."
+            </h1>
+        </div>
+
+        <div class="hero-asymmetric-row pt-4" style="border-top: 1px solid rgba(8,9,12,0.1);">
+            <a href="#indice" class="hero-scroll-btn">
+                SCROLL TO EXPLORE ↓
+            </a>
+            <div class="hero-meta-block">
+                <p class="mb-0">DIRECCIÓN DE ARTE // BRANDBOOK OFICIAL</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 01 — ÍNDICE DEL BRANDBOOK
+    ====================================================== -->
+    <section id="indice" class="brandbook-spread toc-spread" data-chapter="ÍNDICE" data-nav-style="dark">
+        <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-3">
+            <div>
+                <span class="chapter-tag">CONTENIDO GENERAL</span>
+                <h2 class="display-3 fw-bold" style="color:var(--c-chalk); letter-spacing:-0.03em;">Índice Editorial</h2>
+            </div>
+            <p class="font-tech text-muted mb-0">09 CAPÍTULOS DE IDENTIDAD</p>
+        </div>
+
+        <div class="toc-horizontal-strip reveal-fade">
+            <a href="#concepto" class="toc-link-row">
+                <span class="toc-name">01 &nbsp; Concepto</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#identidad" class="toc-link-row">
+                <span class="toc-name">02 &nbsp; Identidad</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#color" class="toc-link-row">
+                <span class="toc-name">03 &nbsp; Color</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#tipografia" class="toc-link-row">
+                <span class="toc-name">04 &nbsp; Tipografía</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#sistema-grafico" class="toc-link-row">
+                <span class="toc-name">05 &nbsp; Sistema gráfico</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#composiciones" class="toc-link-row">
+                <span class="toc-name">06 &nbsp; Composiciones</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#aplicaciones" class="toc-link-row">
+                <span class="toc-name">07 &nbsp; Aplicaciones</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#digital" class="toc-link-row">
+                <span class="toc-name">08 &nbsp; Digital</span>
+                <span class="toc-idx">→</span>
+            </a>
+            <a href="#voz" class="toc-link-row">
+                <span class="toc-name">09 &nbsp; Voz de marca</span>
+                <span class="toc-idx">→</span>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 02 — 01 / CONCEPTO
+    ====================================================== -->
+    <section id="concepto" class="brandbook-spread concept-spread" data-chapter="01 / 09" data-nav-style="light">
+        <div class="concept-watermark-number">01</div>
+        <span class="corner-spec top-right">[ MANIFIESTO Y FILOSOFÍA ]</span>
+
+        <span class="chapter-tag">01 / CONCEPTO</span>
+
+        <div class="concept-editorial-layout">
+            <div class="reveal-fade">
+                <h2 class="concept-huge-statement">
+                    NOVA representa el instante en que una persona decide forjar una nueva versión de sí misma.
+                </h2>
+                <div class="concept-semantic-badges">
+                    <span class="semantic-badge">Autenticidad</span>
+                    <span class="semantic-badge">Determinación</span>
+                    <span class="semantic-badge">Libertad</span>
+                    <span class="semantic-badge">Precisión</span>
+                </div>
+            </div>
+
+            <div class="concept-narrative-block reveal-fade delay-1">
+                <p>
+                    <strong>¿Qué es NOVA?</strong><br>
+                    Es una propuesta de moda urbana contemporánea y una plataforma de diseño. Concibe la indumentaria como una armadura sobria y una extensión directa de la personalidad individual.
+                </p>
+                <p>
+                    <strong>¿Qué busca comunicar?</strong><br>
+                    Seguridad silenciosa, rigor geométrico y dinamismo. Eliminamos lo superfluo para que el mensaje conserve contundencia: la verdadera vanguardia no necesita sobrecargar la forma.
+                </p>
+                <div class="viewport-rule"></div>
+                <p class="font-tech text-muted mb-0" style="font-size:0.8rem;">
+                    PRINCIPIO GUÍA: EVOLUCIÓN PERMANENTE DEL INDIVIDUO.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 03 — 02 / IDENTIDAD (BLOQUE 62VW NOIR)
+    ====================================================== -->
+    <section id="identidad" class="identity-spread" data-chapter="02 / 09" data-nav-style="dark">
+        <div class="identity-left-block reveal-fade">
+            <div>
+                <span class="chapter-tag" style="color:var(--c-lime);">02 / IDENTIDAD</span>
+                <div class="identity-wordmark-large">NOVA</div>
+            </div>
+
+            <div>
+                <p style="font-size:1.35rem; font-weight:400; color:var(--c-chalk); max-width:45vw;">
+                    El imagotipo tipográfico se fundamenta en proporciones geométricas puras, trazos contundentes y ausencia total de adornos secundarios.
+                </p>
+                <div class="identity-blueprint-spec">
+                    ANATOMÍA DE LA MARCA // TRACKING CALIBRADO: +120PT // MODULACIÓN: 1:1.618 // GROSOR DE TRAZO: HOMOGÉNEO Y AUDAZ
+                </div>
+            </div>
+        </div>
+
+        <div class="identity-right-block reveal-fade delay-1">
+            <div class="d-flex justify-content-between align-items-start">
+                <span class="font-tech text-muted">[ ANÁLISIS FORMAL ]</span>
+                <span class="vertical-brand-label">SISTEMA TIPOGRÁFICO PURO</span>
+            </div>
+
+            <div class="my-auto py-5">
+                <h3 class="display-6 fw-bold mb-3" style="color:var(--c-chalk); letter-spacing:-0.03em;">Tipografía como Isotipo</h3>
+                <p style="color:var(--c-gray-400); font-size:1rem; line-height:1.7;">
+                    En NOVA prescindimos de símbolos figurativos o isotipos tradicionales. Las cuatro letras que forman la palabra operan simultáneamente como nombre y como ícono arquitectónico.
+                </p>
+            </div>
+
+            <div class="font-tech text-muted" style="font-size:0.75rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+                VERSIÓN 1.0 APROBADA // MANUAL DE IDENTIDAD GLOBAL
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 04 — 03 / COLOR (SUPERFICIES DE 100VW)
+    ====================================================== -->
+    <section id="color" class="brandbook-spread color-spread" data-chapter="03 / 09" data-nav-style="light">
+        <div class="color-header-pad">
+            <span class="chapter-tag">03 / COLOR</span>
+            <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Sistema Cromático</h2>
+            <p class="lead" style="max-width:680px; color:var(--c-gray-600);">
+                Grandes planos cromáticos interconectados. El color domina la percepción visual sin confinarse dentro de pequeñas cajas.
+            </p>
+        </div>
+
+        <div class="color-landscapes-container reveal-fade">
+            
+            <!-- Plano 01: NOVA Obsidian -->
+            <div class="color-plane plane-obsidian" data-copy-hex="#08090C">
+                <div>
+                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
+                    <h3 class="plane-name mt-2">NOVA OBSIDIAN</h3>
+                </div>
+                <div class="plane-specs">
+                    <p class="mb-0">HEX: #08090C<br>RGB: 8, 9, 12<br>CMYK: 75, 68, 65, 90<br>PANTONE: BLACK 6 C</p>
+                </div>
+            </div>
+
+            <!-- Plano 02: NOVA Cobalt -->
+            <div class="color-plane plane-cobalt" data-copy-hex="#0824E0">
+                <div>
+                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
+                    <h3 class="plane-name mt-2">NOVA COBALT</h3>
+                </div>
+                <div class="plane-specs">
+                    <p class="mb-0">HEX: #0824E0<br>RGB: 8, 36, 224<br>CMYK: 95, 80, 0, 0<br>PANTONE: 2728 C</p>
+                </div>
+            </div>
+
+            <!-- Plano 03: NOVA Lime -->
+            <div class="color-plane plane-lime" data-copy-hex="#C8FF00">
+                <div>
+                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
+                    <h3 class="plane-name mt-2">NOVA LIME</h3>
+                </div>
+                <div class="plane-specs">
+                    <p class="mb-0">HEX: #C8FF00<br>RGB: 200, 255, 0<br>CMYK: 25, 0, 100, 0<br>PANTONE: 388 C</p>
+                </div>
+            </div>
+
+            <!-- Plano 04: NOVA Chalk -->
+            <div class="color-plane plane-chalk" data-copy-hex="#FFFFFF">
+                <div>
+                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
+                    <h3 class="plane-name mt-2">NOVA CHALK</h3>
+                </div>
+                <div class="plane-specs">
+                    <p class="mb-0">HEX: #FFFFFF<br>RGB: 255, 255, 255<br>CMYK: 0, 0, 0, 0<br>PANTONE: WHITE C</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 05 — 04 / TYPOGRAPHY (ESCULTURA TIPOGRÁFICA)
+    ====================================================== -->
+    <section id="tipografia" class="brandbook-spread typography-spread" data-chapter="04 / 09" data-nav-style="light">
+        <span class="chapter-tag">04 / TYPOGRAPHY</span>
+        
+        <div class="type-giant-canvas reveal-fade">
+            <span class="type-giant-letters">Aa</span>
+            <p class="type-cross-statement">
+                NOVA IS A SYSTEM OF IDEAS.
+            </p>
+        </div>
+
+        <!-- Cinta Tipográfica Continua -->
+        <div class="type-runway-ticker">
+            <div class="ticker-inner">
+                NOVA MONTSERRAT GROTESQUE // REGULAR MEDIUM BOLD BLACK // THE FUTURE IS IN MOTION // NOVA MONTSERRAT GROTESQUE // REGULAR MEDIUM BOLD BLACK // 
+            </div>
+        </div>
+
+        <!-- Laboratorio Tipográfico Interactivo -->
+        <div class="type-live-lab reveal-fade delay-1">
+            <div class="type-lab-controls">
+                <div style="flex:1; max-width:600px;">
+                    <label for="labTextInput" class="font-tech text-muted mb-2 d-block">PROBADOR TIPOGRÁFICO EDITORIAL:</label>
+                    <input type="text" id="labTextInput" class="type-lab-input" value="NOVA IDENTITY IN MOTION" placeholder="Escribe aquí para probar...">
+                </div>
+                <div>
+                    <label for="labSizeSlider" class="font-tech text-muted mb-2 d-block">ESCALA: <span id="labSliderVal">48px</span></label>
+                    <input type="range" id="labSizeSlider" min="20" max="96" value="48" style="width:160px; accent-color:var(--c-obsidian);">
+                </div>
+            </div>
+
+            <div class="type-lab-output" id="labTextOutput" style="font-size:48px;">
+                NOVA IDENTITY IN MOTION
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 06 — 05 / SISTEMA GRÁFICO (SVG SYSTEM)
+    ====================================================== -->
+    <section id="sistema-grafico" class="brandbook-spread graphic-spread" data-chapter="05 / 09" data-nav-style="light">
+        <div class="d-flex justify-content-between align-items-baseline flex-wrap">
+            <div>
+                <span class="chapter-tag">05 / SISTEMA GRÁFICO</span>
+                <h2 class="display-4 fw-bold" style="letter-spacing:-0.03em;">Morfología & Vectorial</h2>
+            </div>
+            <p class="font-tech text-muted mb-0">ESPECIFICACIÓN ARQUITECTÓNICA</p>
+        </div>
+
+        <!-- Lienzo SVG Editorial a todo el ancho -->
+        <div class="svg-architectural-viewport reveal-fade">
+            <div class="d-flex justify-content-between font-tech text-muted mb-3" style="font-size:0.75rem;">
+                <span>GRID DE CONSTRUCCIÓN VECTORIAL</span>
+                <span>COTAS: X / 2X / 4X</span>
+            </div>
+
+            <svg class="svg-canvas-embed" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Malla de retícula infinita -->
+                <line x1="0" y1="80" x2="1000" y2="80" stroke="#e9ecf1" stroke-width="1"/>
+                <line x1="0" y1="160" x2="1000" y2="160" stroke="#08090c" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="240" x2="1000" y2="240" stroke="#e9ecf1" stroke-width="1"/>
+                
+                <line x1="200" y1="0" x2="200" y2="320" stroke="#e9ecf1" stroke-width="1"/>
+                <line x1="500" y1="0" x2="500" y2="320" stroke="#08090c" stroke-width="1"/>
+                <line x1="800" y1="0" x2="800" y2="320" stroke="#e9ecf1" stroke-width="1"/>
+
+                <!-- Círculos de enfoque y arcos de proporción -->
+                <circle cx="500" cy="160" r="110" stroke="#0824e0" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="500" cy="160" r="50" stroke="#c8ff00" stroke-width="2"/>
+                <circle cx="200" cy="160" r="4" fill="#08090c"/>
+                <circle cx="800" cy="160" r="4" fill="#08090c"/>
+
+                <!-- Logotipo proyectado en la retícula -->
+                <text x="500" y="180" font-family="'Montserrat', sans-serif" font-weight="900" font-size="78" fill="#08090c" text-anchor="middle" letter-spacing="12">NOVA</text>
+
+                <!-- Cotas de medida -->
+                <text x="500" y="300" font-family="'Space Grotesk', monospace" font-size="11" fill="#7b8192" text-anchor="middle">ÁREA DE RESERVA OBLIGATORIA: 2X</text>
+            </svg>
+
+            <div class="d-flex justify-content-between font-tech text-muted mt-3" style="font-size:0.75rem;">
+                <span>EJE PRINCIPAL DE ASIMETRÍA</span>
+                <span>STATUS: NORMA APROBADA</span>
+            </div>
+        </div>
+
+        <div class="graphic-principles-row reveal-fade delay-1">
+            <div class="principle-item">
+                <h4>01 / Retícula Estructural</h4>
+                <p>Las composiciones se rigen por subdivisiones métricas que garantizan equilibrio y tensión visual sin encerrar los elementos en cajas.</p>
+            </div>
+            <div class="principle-item">
+                <h4>02 / Proporción de Trazo</h4>
+                <p>El grosor tipográfico se mantiene en relación directa con el espacio negativo circundante para una máxima nitidez visual.</p>
+            </div>
+            <div class="principle-item">
+                <h4>03 / Dinamismo Asimétrico</h4>
+                <p>Se favorecen las jerarquías disonantes donde un glifo de gran escala dialoga armónicamente con micro-metadatos técnicos.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 07 — 06 / COMPOSICIONES (LÁMINAS DE BRANDBOOK)
+    ====================================================== -->
+    <section id="composiciones" class="brandbook-spread compositions-spread" data-chapter="06 / 09" data-nav-style="dark">
+        <div class="px-4 mb-3">
+            <span class="chapter-tag" style="color:var(--c-lime);">06 / COMPOSITIONS</span>
+            <h2 class="display-3 fw-bold" style="color:var(--c-chalk); letter-spacing:-0.04em;">Láminas Editoriales</h2>
+            <p style="color:var(--c-gray-400); max-width:600px;">
+                Cuatro estudios de maquetación pura que exploran el espacio, el peso y el contraste de la marca a escala monumental.
+            </p>
+        </div>
+
+        <div class="composition-sheets-canvas reveal-fade">
+            
+            <!-- Lámina 01 -->
+            <div class="editorial-poster-sheet sheet-dark">
+                <div class="d-flex justify-content-between sheet-num">
+                    <span>POSTER // 01</span>
+                    <span>NOIR CONTRAST</span>
+                </div>
+                <div class="my-auto text-center">
+                    <span class="sheet-hero-word" style="color:var(--c-chalk);">N</span>
+                </div>
+                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:var(--c-gray-500);">
+                    <span>SCALE: MAXIMUM</span>
+                    <span>01 / 04</span>
+                </div>
+            </div>
+
+            <!-- Lámina 02 -->
+            <div class="editorial-poster-sheet sheet-chalk">
+                <div class="d-flex justify-content-between sheet-num">
+                    <span>POSTER // 02</span>
+                    <span>TYPO MANIFESTO</span>
+                </div>
+                <div class="my-auto">
+                    <h3 class="display-5 fw-bold mb-3" style="letter-spacing:-0.03em;">VISTE TU PRÓXIMA VERSIÓN.</h3>
+                    <p style="font-size:1rem; color:var(--c-gray-600);">La indumentaria contemporánea como declaración de autonomía.</p>
+                </div>
+                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:var(--c-gray-500);">
+                    <span>EDITORIAL SPREAD</span>
+                    <span>02 / 04</span>
+                </div>
+            </div>
+
+            <!-- Lámina 03 -->
+            <div class="editorial-poster-sheet sheet-cobalt">
+                <div class="d-flex justify-content-between sheet-num" style="color:rgba(255,255,255,0.7);">
+                    <span>POSTER // 03</span>
+                    <span>COBALT ESSENCE</span>
+                </div>
+                <div class="my-auto text-center">
+                    <div class="display-2 fw-bold" style="letter-spacing:-0.04em;">NOVA</div>
+                    <span class="font-tech" style="letter-spacing:3px; font-size:0.8rem;">SYSTEM IDENTITY</span>
+                </div>
+                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:rgba(255,255,255,0.6);">
+                    <span>VANGUARD SERIES</span>
+                    <span>03 / 04</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 08 — 07 / APLICACIONES (EDITORIAL REAL)
+    ====================================================== -->
+    <section id="aplicaciones" class="brandbook-spread applications-spread" data-chapter="07 / 09" data-nav-style="light">
+        <span class="chapter-tag">07 / APPLICATIONS</span>
+        <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Puntos de Contacto</h2>
+
+        <div class="editorial-mockup-arrangement reveal-fade">
+            <!-- Visual Principal de Gran Escala -->
+            <div class="mockup-frame-large">
+                <img src="img/stationery_mockup.jpg" alt="Papelería y Guía Corporativa NOVA">
+                <div class="d-flex justify-content-between font-tech text-muted pt-3" style="font-size:0.75rem;">
+                    <span>FIG. 01 — PAPELERÍA CORPORATIVA EN CARTULINA TEXTURIZADA</span>
+                    <span>OFFSET DE PRECISIÓN</span>
+                </div>
+            </div>
+
+            <!-- Visual Secundario y Narrativa Asimétrica -->
+            <div class="mockup-editorial-stack">
+                <div class="mockup-story-text">
+                    <h3>Materialidad & Producción</h3>
+                    <p>
+                        La identidad visual de NOVA cobra vida a través de papeles de alto gramaje, algodón crudo ecológico y empaques en cartón rígido con acabados sobrios libres de brillo artificial.
+                    </p>
+                </div>
+
+                <div class="mockup-frame-secondary">
+                    <img src="img/packaging_tote.jpg" alt="Packaging y Tote Bag NOVA">
+                    <div class="d-flex justify-content-between font-tech text-muted pt-2" style="font-size:0.72rem;">
+                        <span>FIG. 02 — PACKAGING Y TOTE TEXTIL</span>
+                        <span>SERIGRAFÍA PURA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 09 — 08 / DIGITAL (UI SYSTEM SPECIMEN)
+    ====================================================== -->
+    <section id="digital" class="brandbook-spread digital-spread" data-chapter="08 / 09" data-nav-style="light">
+        <div class="d-flex justify-content-between align-items-baseline flex-wrap">
+            <div>
+                <span class="chapter-tag">08 / DIGITAL</span>
+                <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Sistema de Interfaz</h2>
+            </div>
+            <p class="font-tech text-muted mb-0">COMPONENTES EDITORIALES DE UI</p>
+        </div>
+
+        <div class="ui-specimen-strip reveal-fade">
+            <!-- Botones Primarios -->
+            <div class="ui-specimen-group">
+                <span>01 // ACCIONES PRIMARIAS</span>
+                <div class="d-flex gap-3 flex-wrap">
+                    <button class="nova-editorial-btn btn-solid-noir" type="button">ACCION NOIR</button>
+                    <button class="nova-editorial-btn btn-outline-noir" type="button">CONTORNO</button>
+                    <button class="nova-editorial-btn btn-solid-lime" type="button">ACENTO VOLT</button>
+                </div>
+            </div>
+
+            <!-- Campos de Entrada -->
+            <div class="ui-specimen-group" style="min-width:280px; flex:1; max-width:480px;">
+                <span>02 // CAMPOS TIPOGRÁFICOS</span>
+                <input type="text" class="nova-input-field" placeholder="Buscar en el catálogo..." value="PRENDAS TÉCNICAS NOVA">
+            </div>
+
+            <!-- Indicadores de Estado -->
+            <div class="ui-specimen-group">
+                <span>03 // ESTADOS DE SISTEMA</span>
+                <div class="d-flex gap-2">
+                    <span class="font-tech py-2 px-3 bg-dark text-white" style="font-size:0.75rem;">LIVE SPEC</span>
+                    <span class="font-tech py-2 px-3 border border-dark" style="font-size:0.75rem;">V1.0 GLOBAL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 10 — 09 / VOICE (TONO Y DIRECTRICES VERBALES)
+    ====================================================== -->
+    <section id="voz" class="brandbook-spread voice-spread" data-chapter="09 / 09" data-nav-style="light">
+        <span class="chapter-tag">09 / VOICE</span>
+        <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Voz y Lenguaje</h2>
+        <p class="lead" style="max-width:680px; color:var(--c-gray-600);">
+            Cómo se expresa NOVA en redacción editorial, comunicación digital y campañas de producto.
+        </p>
+
+        <div class="voice-editorial-strip reveal-fade">
+            <!-- WE SAY -->
+            <div class="voice-column">
+                <span class="voice-col-kicker">LO QUE DECIMOS</span>
+                <div class="voice-giant-words">
+                    CLARO.<br>
+                    DIRECTO.<br>
+                    HUMANO.<br>
+                    SEGURO.
+                </div>
+            </div>
+
+            <!-- WE DON'T SAY -->
+            <div class="voice-column">
+                <span class="voice-col-kicker" style="color:var(--c-gray-400);">LO QUE EVITAMOS</span>
+                <div class="voice-giant-words" style="color:var(--c-gray-400);">
+                    COMPLICADO.<br>
+                    EXAGERADO.<br>
+                    GENÉRICO.<br>
+                    RUIDOSO.
+                </div>
+            </div>
+
+            <!-- OUR TONE -->
+            <div class="voice-column voice-tone-col">
+                <span class="voice-col-kicker" style="color:var(--c-lime);">NUESTRO TONO</span>
+                <div class="voice-giant-words voice-giant-words tone-lime">
+                    MINIMALISTA.<br>
+                    INTELIGENTE.<br>
+                    CERCANO.<br>
+                    CONTEMPORÁNEO.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         SECCIÓN 11 — 10 / CIERRE (FINAL MONUMENTAL)
+    ====================================================== -->
+    <section id="cierre" class="brandbook-spread cierre-spread" data-chapter="FINAL" data-nav-style="dark">
+        <span class="corner-spec top-right" style="color:rgba(255,255,255,0.4);">[ FIN DEL MANUAL // 2026 ]</span>
+
+        <div class="my-auto py-5 reveal-fade">
+            <span class="cierre-monumental-title">NOVA</span>
+            <div class="cierre-sub-quote">
+                "THE FUTURE IS IN MOTION."
+            </div>
+        </div>
+
+        <div class="cierre-studio-colophon">
+            <div>
+                <p class="mb-1 fw-bold text-white">MANUAL DE IDENTIDAD VISUAL NOVA — 2026</p>
+                <p class="mb-0">DISEÑO Y DIRECCIÓN DE ARTE // PROYECTO ACADÉMICO</p>
+            </div>
+            <div>
+                <a href="#portada" class="cierre-top-link">↑ VOLVER A PORTADA</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Botón volver arriba flotante -->
+    <button id="backToTop" class="editorial-top-btn" aria-label="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+
+    <!-- Script de Control del Brandbook Digital -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
