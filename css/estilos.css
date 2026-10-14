@@ -1,7 +1,7 @@
 /* =====================================================
-   NOVA — BRANDBOOK DIGITAL / MANUAL DE IDENTIDAD EDITORIAL
-   Dirección de Arte: Editorial Asimétrica / Full Viewport Canvas
-   Inspiración: Grin Brandbook & Swiss Avant-Garde Design
+   NOVA — BRANDBOOK DIGITAL EDITORIAL & LANDING DE ALTA CONVERSIÓN
+   Dirección de Arte: Editorial Asimétrica / Alto Impacto / Swiss Avant-Garde
+   Paleta: Negro Profundo (#050505), Rojo Acción (#E10600), Blanco Puro (#FFFFFF)
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -10,30 +10,53 @@
    01. SISTEMA CROMÁTICO & DESIGN TOKENS
    ===================================================== */
 :root {
-    /* Paleta Editorial Propia de NOVA */
-    --c-obsidian: #08090c;       /* Negro Carbón Profundo */
-    --c-noir: #12141a;           /* Grafito Oscuro */
-    --c-chalk: #f5f6f8;          /* Blanco Tiza / Marfil Editorial */
-    --c-pure-white: #ffffff;     /* Blanco Puro */
-    --c-cobalt: #0824e0;         /* Azul Cobalto Eléctrico (Vanguardia) */
-    --c-lime: #c8ff00;           /* Verde Lima Ácido / Volt (Acento de Precisión) */
-    --c-gray-100: #e9ecf1;
-    --c-gray-300: #cbcfd8;
-    --c-gray-500: #7b8192;
-    --c-gray-700: #2d303a;
+    /* Paleta Principal NOVA */
+    --nova-black: #050505;
+    --nova-black-soft: #111111;
+    --nova-black-card: #181818;
+    --nova-black-elevated: #222222;
+
+    --nova-red: #E10600;
+    --nova-red-bright: #FF1E1E;
+    --nova-red-dark: #870000;
+    --nova-red-glow: rgba(225, 6, 0, 0.28);
+
+    --nova-white: #FFFFFF;
+    --nova-chalk: #F6F5F2;
+    --nova-gray: #EDEDED;
+    --nova-gray-dark: #8A8A8A;
+    --nova-gray-muted: #555555;
+
+    /* Bordes & Líneas Técnicas */
+    --border-light: rgba(255, 255, 255, 0.12);
+    --border-light-strong: rgba(255, 255, 255, 0.22);
+    --border-dark: rgba(5, 5, 5, 0.12);
+    --border-red: rgba(225, 6, 0, 0.5);
 
     /* Tipografías */
-    --font-display: 'Montserrat', sans-serif;
+    --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-tech: 'Space Grotesk', monospace;
 
-    /* Dinámicas & Transiciones */
+    /* Espaciado */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 1rem;      /* 16px */
+    --space-4: 1.5rem;    /* 24px */
+    --space-5: 2rem;      /* 32px */
+    --space-6: 3rem;      /* 48px */
+    --space-7: 4.5rem;    /* 72px */
+    --space-8: 6rem;      /* 96px */
+    --section-pad-y: clamp(75px, 9vw, 140px);
+    --container-pad-x: clamp(1.25rem, 4vw, 4.5rem);
+
+    /* Transiciones */
     --bezier-editorial: cubic-bezier(0.16, 1, 0.3, 1);
     --t-fast: all 0.25s var(--bezier-editorial);
-    --t-smooth: all 0.6s var(--bezier-editorial);
+    --t-smooth: all 0.5s var(--bezier-editorial);
 }
 
 /* =====================================================
-   02. RESET & REGLAS DE LIENZO (FULL VIEWPORT)
+   02. RESET & LIENZO FULL VIEWPORT
    ===================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -44,23 +67,24 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    background-color: var(--c-chalk);
+    background-color: var(--nova-black);
 }
 
 body {
-    background-color: var(--c-chalk);
-    color: var(--c-obsidian);
+    background-color: var(--nova-black);
+    color: var(--nova-white);
     font-family: var(--font-display);
-    line-height: 1.5;
+    line-height: 1.55;
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-    background-color: var(--c-lime);
-    color: var(--c-obsidian);
+    background-color: var(--nova-red);
+    color: var(--nova-white);
 }
 
 /* Barra superior de lectura */
@@ -70,174 +94,245 @@ body {
     left: 0;
     height: 3px;
     width: 0%;
-    background-color: var(--c-cobalt);
+    background-color: var(--nova-red);
     z-index: 10000;
     transition: width 0.1s ease-out;
 }
 
-/* Toast de notificación de copiado */
-#toast-notice {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(70px);
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-    border-left: 3px solid var(--c-lime);
-    padding: 12px 28px;
-    font-family: var(--font-tech);
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
+/* =====================================================
+   03. TIPOGRAFÍA EDITORIAL & JERARQUÍA SEMÁNTICA
+   ===================================================== */
+.nova-h1-hero {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 6.8vw, 6.2rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    color: var(--nova-white);
     text-transform: uppercase;
-    z-index: 10000;
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--t-smooth);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-#toast-notice.visible {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+.nova-h2-section {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+}
+
+.nova-h3-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.nova-eyebrow {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--nova-red-bright);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--space-3);
+}
+
+.nova-eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--nova-red);
+}
+
+.nova-lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--nova-gray);
+}
+
+.nova-body {
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #CCCCCC;
+}
+
+.nova-meta {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    letter-spacing: 1.8px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.text-red {
+    color: var(--nova-red-bright) !important;
+}
+
+.text-white {
+    color: var(--nova-white) !important;
+}
+
+.text-gray-dark {
+    color: var(--nova-gray-dark) !important;
+}
+
+.text-sand {
+    color: #D5CEBF !important;
 }
 
 /* =====================================================
-   03. NAVEGACIÓN FIJA MINIMALISTA
+   04. NAVEGACIÓN FIJA MINIMALISTA (ORIENTADA A CONVERSIÓN)
    ===================================================== */
 .editorial-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 24px 4vw;
+    padding: 16px 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(245, 246, 248, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(8, 9, 12, 0.08);
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-light);
     z-index: 999;
     transition: var(--t-fast);
 }
 
-.editorial-nav.nav-dark {
-    background: rgba(8, 9, 12, 0.88);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-    color: var(--c-chalk);
-}
-
-.editorial-nav.nav-dark .brand-mark,
-.editorial-nav.nav-dark .nav-indicator {
-    color: var(--c-chalk);
+.editorial-nav.nav-scrolled {
+    padding: 12px 4vw;
+    background: rgba(5, 5, 5, 0.97);
+    border-bottom-color: var(--nova-red);
 }
 
 .brand-mark {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 900;
-    letter-spacing: 4px;
-    color: var(--c-obsidian);
     text-decoration: none;
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.brand-mark-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--c-cobalt);
-    border-radius: 50%;
-}
-
-.nav-indicator {
-    font-family: var(--font-tech);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    display: flex;
     align-items: center;
     gap: 12px;
 }
 
+.nova-logo-svg {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--nova-white);
+    transition: var(--t-fast);
+}
+
+.nova-logo-nav {
+    height: 18px;
+    width: auto;
+}
+
+.brand-mark:hover .nova-logo-svg {
+    color: var(--nova-red-bright);
+}
+
 .nav-chapter-badge {
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
+    background: var(--nova-black-card);
+    color: var(--nova-gray);
+    border: 1px solid var(--border-light);
     padding: 3px 10px;
+    font-family: var(--font-tech);
     font-size: 0.72rem;
+    letter-spacing: 1.5px;
     border-radius: 2px;
 }
 
-.editorial-nav.nav-dark .nav-chapter-badge {
-    background: var(--c-lime);
-    color: var(--c-obsidian);
+.nav-action-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-contact-link {
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    color: var(--nova-gray);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--t-fast);
+    padding: 6px 12px;
+    border: 1px solid transparent;
+}
+
+.nav-contact-link:hover {
+    color: var(--nova-white);
+    border-color: var(--border-light);
+}
+
+.nav-contact-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #00E676;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00E676;
+}
+
+.nav-cta-btn {
+    background: var(--nova-red);
+    color: var(--nova-white);
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid var(--nova-red);
+    transition: var(--t-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-cta-btn:hover {
+    background: var(--nova-red-bright);
+    color: var(--nova-white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px var(--nova-red-glow);
 }
 
 /* =====================================================
-   04. CONTENEDORES EDITORIALES FULL-BLEED
+   05. ESTRUCTURA EDITORIAL DE SECCIONES (SPREADS)
    ===================================================== */
 .brandbook-spread {
-    width: 100vw;
+    width: 100%;
     position: relative;
     overflow: hidden;
-    padding: 130px 4vw 100px;
-    border-bottom: 1px solid rgba(8, 9, 12, 0.12);
+    padding-top: var(--section-pad-y);
+    padding-bottom: var(--section-pad-y);
 }
 
 .spread-fullscreen {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.spread-dark {
-    background-color: var(--c-obsidian);
-    color: var(--c-chalk);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.spread-chalk {
-    background-color: var(--c-chalk);
-    color: var(--c-obsidian);
-}
-
-.spread-cobalt {
-    background-color: var(--c-cobalt);
-    color: var(--c-chalk);
-}
-
-/* Encabezados de capítulo editorial */
-.chapter-tag {
-    font-family: var(--font-tech);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--c-gray-500);
-    display: inline-block;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.spread-dark .chapter-tag {
-    color: var(--c-gray-400);
-}
-
-.spread-cobalt .chapter-tag {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Metadatos técnicos en esquinas */
+/* Corner Specs de estilo Brandbook */
 .corner-spec {
     position: absolute;
     font-family: var(--font-tech);
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     letter-spacing: 2px;
-    color: var(--c-gray-500);
-    text-transform: uppercase;
-    user-select: none;
+    color: var(--nova-gray-dark);
+    z-index: 5;
+    pointer-events: none;
 }
 
 .corner-spec.top-right {
@@ -246,783 +341,976 @@ body {
 }
 
 .corner-spec.bottom-right {
-    bottom: 30px;
+    bottom: 24px;
     right: 4vw;
 }
 
-/* Línea de corte / regla que atraviesa el viewport */
-.viewport-rule {
-    width: 100%;
-    height: 1px;
-    background: rgba(8, 9, 12, 0.12);
-    margin: 40px 0;
+.corner-spec.top-left {
+    top: 90px;
+    left: 4vw;
 }
 
-.spread-dark .viewport-rule {
-    background: rgba(255, 255, 255, 0.12);
+.corner-spec.bottom-left {
+    bottom: 24px;
+    left: 4vw;
 }
 
 /* =====================================================
-   SECCIÓN 00 — PORTADA EDITORIAL (100VW / 100VH)
+   06. SECCIÓN 01: HERO + FORMULARIO
    ===================================================== */
 .hero-spread {
-    padding-top: 140px;
-    padding-bottom: 50px;
-    background: var(--c-chalk);
-    position: relative;
+    background: radial-gradient(circle at 10% 20%, rgba(225, 6, 0, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(225, 6, 0, 0.05) 0%, transparent 40%),
+                var(--nova-black);
+    padding-top: clamp(100px, 12vw, 150px);
+    border-bottom: 1px solid var(--border-light);
 }
 
-.hero-giant-title {
-    font-size: clamp(5.5rem, 21vw, 24rem);
-    font-weight: 900;
-    line-height: 0.8;
-    letter-spacing: -0.06em;
-    color: var(--c-obsidian);
-    display: block;
-    margin: 10px 0 30px;
-    user-select: none;
-}
-
-.hero-asymmetric-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.hero-concept-phrase {
-    font-size: clamp(1.8rem, 4.5vw, 4.2rem);
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    max-width: 65vw;
-    color: var(--c-noir);
-}
-
-.hero-meta-block {
-    text-align: right;
-    font-family: var(--font-tech);
-    font-size: 0.8rem;
-    line-height: 1.8;
-    color: var(--c-gray-600);
-}
-
-.hero-scroll-btn {
+.hero-editorial-badge {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    background: rgba(225, 6, 0, 0.12);
+    border: 1px solid var(--border-red);
+    padding: 6px 14px;
     font-family: var(--font-tech);
-    font-size: 0.78rem;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--c-obsidian);
-    text-decoration: none;
-    animation: floatArrow 2.5s infinite ease-in-out;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--nova-red-bright);
+    margin-bottom: var(--space-4);
 }
 
-@keyframes floatArrow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+.hero-spec-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+}
+
+.hero-spec-item {
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--nova-gray-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-spec-item strong {
+    color: var(--nova-white);
 }
 
 /* =====================================================
-   SECCIÓN 01 — ÍNDICE EDITORIAL DEL BRANDBOOK
+   LÁMINAS EDITORIALES DE BRANDBOOK (FOTOGRAFÍA PROTAGONISTA)
    ===================================================== */
-.toc-spread {
-    padding: 100px 4vw;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.toc-horizontal-strip {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    margin-top: 50px;
-}
-
-.toc-link-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 30px 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    text-decoration: none;
-    color: var(--c-chalk);
+.brandbook-photo-plate {
+    position: relative;
+    border: 1px solid var(--border-light);
+    background: var(--nova-black-soft);
+    overflow: hidden;
     transition: var(--t-fast);
 }
 
-.toc-link-row:hover {
-    background: rgba(255, 255, 255, 0.04);
-    padding-left: 32px;
-    color: var(--c-lime);
+.brandbook-photo-plate:hover {
+    border-color: var(--nova-red);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(225, 6, 0, 0.15);
 }
 
-.toc-idx {
-    font-family: var(--font-tech);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--c-gray-500);
+.brandbook-photo-plate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.75s var(--bezier-editorial), filter 0.4s ease;
+    filter: contrast(105%) brightness(95%);
 }
 
-.toc-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+.brandbook-photo-plate:hover img {
+    transform: scale(1.03);
+    filter: contrast(110%) brightness(100%);
 }
 
-/* =====================================================
-   SECCIÓN 02 — 01 / CONCEPTO (ASIMETRÍA PURA)
-   ===================================================== */
-.concept-spread {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: var(--c-chalk);
-}
-
-.concept-watermark-number {
+.plate-header-meta {
     position: absolute;
-    top: 30px;
-    right: 3vw;
-    font-size: clamp(10rem, 28vw, 32rem);
-    font-weight: 900;
-    color: rgba(8, 9, 12, 0.04);
-    line-height: 0.75;
-    user-select: none;
-    pointer-events: none;
-}
-
-.concept-editorial-layout {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 8vw;
-    align-items: flex-start;
-    position: relative;
-    z-index: 2;
-}
-
-.concept-huge-statement {
-    font-size: clamp(2.4rem, 6vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: -0.04em;
-    color: var(--c-obsidian);
-}
-
-.concept-narrative-block {
-    padding-top: 20px;
-}
-
-.concept-narrative-block p {
-    font-size: 1.15rem;
-    color: var(--c-gray-600);
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.concept-semantic-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.semantic-badge {
-    font-family: var(--font-tech);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 6px 14px;
-    border: 1px solid var(--c-gray-300);
-    text-transform: uppercase;
-}
-
-/* =====================================================
-   SECCIÓN 03 — 02 / IDENTIDAD (BLOQUE DEL 60VW)
-   ===================================================== */
-.identity-spread {
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.identity-left-block {
-    width: 62vw;
-    background: var(--c-noir);
-    padding: 140px 5vw 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.identity-right-block {
-    width: 38vw;
-    padding: 140px 4vw 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: var(--c-obsidian);
-}
-
-.identity-wordmark-large {
-    font-size: clamp(4rem, 13vw, 12rem);
-    font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -0.05em;
-    color: var(--c-chalk);
-}
-
-.identity-blueprint-spec {
-    font-family: var(--font-tech);
-    font-size: 0.78rem;
-    line-height: 2;
-    color: var(--c-gray-400);
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding-top: 30px;
-}
-
-.vertical-brand-label {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-family: var(--font-tech);
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: var(--c-lime);
-    text-transform: uppercase;
-}
-
-/* =====================================================
-   SECCIÓN 04 — 03 / COLOR (SUPERFICIES DE 100VW)
-   ===================================================== */
-.color-spread {
-    padding: 120px 0 0;
-    background: var(--c-chalk);
-}
-
-.color-header-pad {
-    padding: 0 4vw 60px;
-}
-
-.color-landscapes-container {
-    width: 100vw;
-    display: flex;
-    min-height: 520px;
-}
-
-.color-plane {
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: var(--t-smooth);
-    position: relative;
-    overflow: hidden;
-}
-
-.color-plane:hover {
-    flex-grow: 1.5;
-}
-
-/* Proporciones asimétricas */
-.plane-obsidian {
-    flex: 4;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.plane-cobalt {
-    flex: 3;
-    background: var(--c-cobalt);
-    color: var(--c-chalk);
-}
-
-.plane-lime {
-    flex: 2;
-    background: var(--c-lime);
-    color: var(--c-obsidian);
-}
-
-.plane-chalk {
-    flex: 2;
-    background: var(--c-pure-white);
-    color: var(--c-obsidian);
-    border-left: 1px solid var(--c-gray-200);
-}
-
-.plane-name {
-    font-size: clamp(1.4rem, 2.8vw, 2.5rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    line-height: 1;
-}
-
-.plane-specs {
-    font-family: var(--font-tech);
-    font-size: 0.78rem;
-    line-height: 2;
-}
-
-.plane-copy-cue {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 14px;
     font-family: var(--font-tech);
     font-size: 0.68rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.7;
+    letter-spacing: 1.8px;
+    color: var(--nova-gray-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
 }
 
-/* =====================================================
-   SECCIÓN 05 — 04 / TYPOGRAPHY (ESCULTURA TIPOGRÁFICA)
-   ===================================================== */
-.typography-spread {
-    padding: 130px 4vw;
-    background: var(--c-pure-white);
-}
-
-.type-giant-canvas {
-    position: relative;
-    margin: 40px 0 80px;
-}
-
-.type-giant-letters {
-    font-size: clamp(6rem, 24vw, 28rem);
-    font-weight: 900;
-    line-height: 0.75;
-    letter-spacing: -0.07em;
-    color: var(--c-obsidian);
-    user-select: none;
-}
-
-.type-cross-statement {
-    font-size: clamp(1.8rem, 4.2vw, 4.8rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    margin: 40px 0;
-    max-width: 80vw;
-}
-
-.type-runway-ticker {
-    width: 100vw;
-    margin-left: -4vw;
-    padding: 24px 0;
-    border-top: 1px solid var(--c-obsidian);
-    border-bottom: 1px solid var(--c-obsidian);
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
-    font-weight: 800;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.ticker-inner {
-    display: inline-block;
-    animation: tickerLoop 30s linear infinite;
-}
-
-@keyframes tickerLoop {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Probador tipográfico editorial integrado */
-.type-live-lab {
-    margin-top: 70px;
-    padding: 50px 0;
-    border-top: 1px solid rgba(8, 9, 12, 0.12);
-}
-
-.type-lab-controls {
+.plate-footer-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border-light);
+    padding: 10px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 8px;
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    z-index: 4;
 }
 
-.type-lab-input {
-    flex: 1;
-    min-width: 280px;
-    border: none;
-    border-bottom: 2px solid var(--c-obsidian);
-    background: transparent;
-    padding: 10px 0;
-    font-family: var(--font-display);
-    font-size: 1.2rem;
+.plate-corner-cross {
+    position: absolute;
+    font-family: var(--font-tech);
+    font-size: 12px;
+    color: var(--nova-red-bright);
+    line-height: 1;
+    z-index: 5;
+    pointer-events: none;
     font-weight: 700;
-    color: var(--c-obsidian);
+}
+
+.plate-corner-cross.tl { top: 6px; left: 8px; }
+.plate-corner-cross.tr { top: 6px; right: 8px; }
+.plate-corner-cross.bl { bottom: 6px; left: 8px; }
+.plate-corner-cross.br { bottom: 6px; right: 8px; }
+
+/* Tarjeta Editorial de Imagen en Hero */
+.hero-visual-card {
+    position: relative;
+    border: 1px solid var(--border-light);
+    background: var(--nova-black-soft);
+    margin-top: var(--space-4);
+    overflow: hidden;
+    transition: var(--t-fast);
+}
+
+.hero-visual-card:hover {
+    border-color: var(--border-light-strong);
+}
+
+.hero-visual-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    opacity: 0.88;
+    transition: var(--t-smooth);
+    filter: contrast(108%) brightness(96%);
+}
+
+.hero-visual-card:hover img {
+    opacity: 1;
+    filter: contrast(112%) brightness(100%);
+    transform: scale(1.02);
+}
+
+.hero-visual-caption {
+    padding: 10px 14px;
+    background: var(--nova-black);
+    border-top: 1px solid var(--border-light);
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    color: var(--nova-gray-dark);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =====================================================
+   07. FORMULARIO HERO DE ALTA CONVERSIÓN
+   ===================================================== */
+.hero-form-dossier {
+    position: relative;
+    background: var(--nova-black-soft);
+    border: 1px solid var(--border-light-strong);
+    padding: clamp(24px, 3.5vw, 36px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(225, 6, 0, 0.08);
+    transition: var(--t-fast);
+}
+
+.hero-form-dossier.form-highlight {
+    border-color: var(--nova-red-bright);
+    box-shadow: 0 0 50px var(--nova-red-glow), 0 25px 60px rgba(0, 0, 0, 0.85);
+    animation: dossierPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes dossierPulse {
+    0% { border-color: var(--nova-red); }
+    100% { border-color: var(--nova-red-bright); }
+}
+
+.dossier-tag {
+    font-family: var(--font-tech);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--nova-red-bright);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+}
+
+.dossier-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    font-weight: 900;
+    color: var(--nova-white);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.dossier-subtext {
+    font-size: 0.88rem;
+    color: var(--nova-gray-dark);
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+/* Campos de Formulario */
+.form-field-group {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.nova-label {
+    display: block;
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--nova-gray);
+    margin-bottom: 6px;
+}
+
+.nova-label .req {
+    color: var(--nova-red-bright);
+}
+
+.nova-input,
+.nova-select {
+    width: 100%;
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
+    color: var(--nova-white);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border-radius: 0;
+    transition: var(--t-fast);
     outline: none;
 }
 
-.type-lab-output {
-    font-size: clamp(2.2rem, 5vw, 6rem);
-    font-weight: 800;
-    line-height: 1.1;
-    word-break: break-word;
+.nova-input::placeholder {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.nova-input:focus,
+.nova-select:focus {
+    border-color: var(--nova-red-bright);
+    background: #1c1c1c;
+    box-shadow: 0 0 0 2px var(--nova-red-glow);
+}
+
+.nova-input.is-invalid,
+.nova-select.is-invalid {
+    border-color: #FF4444;
+    background: rgba(255, 68, 68, 0.05);
+}
+
+.nova-input.is-valid {
+    border-color: #00E676;
+}
+
+.field-error-msg {
+    display: none;
+    font-family: var(--font-tech);
+    font-size: 0.7rem;
+    color: #FF5252;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.form-field-group.has-error .field-error-msg {
+    display: block;
+}
+
+/* Checkbox de Privacidad */
+.form-check-editorial {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.form-check-editorial input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: var(--t-fast);
+    position: relative;
+}
+
+.form-check-editorial input[type="checkbox"]:checked {
+    background: var(--nova-red);
+    border-color: var(--nova-red);
+}
+
+.form-check-editorial input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--nova-white);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.form-check-editorial label {
+    font-size: 0.78rem;
+    color: var(--nova-gray-dark);
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+.form-check-editorial a {
+    color: var(--nova-white);
+    text-decoration: underline;
+}
+
+/* Botón Submit del Formulario */
+.btn-submit-hero {
+    width: 100%;
+    background: var(--nova-red);
+    color: var(--nova-white);
+    border: 1px solid var(--nova-red);
+    font-family: var(--font-tech);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: var(--t-fast);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px var(--nova-red-glow);
+}
+
+.btn-submit-hero:hover {
+    background: var(--nova-red-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(225, 6, 0, 0.45);
+}
+
+.btn-submit-hero:active {
+    transform: translateY(0);
+}
+
+.dossier-microcopy {
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    color: var(--nova-gray-dark);
+    text-align: center;
+    margin-top: 14px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+/* Estado de Éxito del Formulario */
+.form-success-message {
+    display: none;
+    text-align: center;
+    padding: 30px 15px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.form-success-message.active {
+    display: block;
+}
+
+.success-icon-badge {
+    width: 56px;
+    height: 56px;
+    background: var(--nova-red);
+    color: var(--nova-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 25px var(--nova-red-glow);
+}
+
+.success-demo-notice {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed var(--border-light);
+    padding: 10px;
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    color: var(--nova-gray-dark);
+    margin-top: 20px;
 }
 
 /* =====================================================
-   SECCIÓN 06 — 05 / SISTEMA GRÁFICO (SVG SYSTEM)
+   08. SECCIÓN 02: BENEFICIOS (ASIMETRÍA EDITORIAL)
    ===================================================== */
-.graphic-spread {
-    background: var(--c-chalk);
-    padding: 130px 4vw 100px;
+.benefits-spread {
+    background-color: var(--nova-black-soft);
+    border-bottom: 1px solid var(--border-light);
 }
 
-.svg-architectural-viewport {
-    width: 100%;
-    min-height: 480px;
-    background: var(--c-pure-white);
-    border: 1px solid rgba(8, 9, 12, 0.12);
+.benefit-tile {
     position: relative;
-    padding: 60px 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 40px 0;
-}
-
-.svg-canvas-embed {
-    width: 100%;
-    height: 320px;
-}
-
-.graphic-principles-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.principle-item h4 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.principle-item p {
-    font-size: 0.95rem;
-    color: var(--c-gray-600);
-}
-
-/* =====================================================
-   SECCIÓN 07 — 06 / COMPOSICIONES EDITORIALES (SPREADS)
-   ===================================================== */
-.compositions-spread {
-    padding: 130px 0;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.composition-sheets-canvas {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin-top: 50px;
-}
-
-.editorial-poster-sheet {
-    min-height: 580px;
-    padding: 60px 40px;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    padding: clamp(28px, 4vw, 44px);
+    height: 100%;
+    transition: var(--t-fast);
     overflow: hidden;
-    transition: var(--t-smooth);
 }
 
-.editorial-poster-sheet:hover {
-    background: rgba(255, 255, 255, 0.03);
+.benefit-tile-dark {
+    background: var(--nova-black);
+    border: 1px solid var(--border-light);
 }
 
-.sheet-dark {
-    background: var(--c-obsidian);
+.benefit-tile-red {
+    background: var(--nova-red);
+    color: var(--nova-white);
+    border: 1px solid var(--nova-red);
 }
 
-.sheet-chalk {
-    background: var(--c-chalk);
-    color: var(--c-obsidian);
+.benefit-tile-red .nova-h3-title,
+.benefit-tile-red .nova-body,
+.benefit-tile-red .benefit-num {
+    color: var(--nova-white) !important;
 }
 
-.sheet-cobalt {
-    background: var(--c-cobalt);
-    color: var(--c-chalk);
+.benefit-tile-gray {
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
 }
 
-.sheet-num {
+.benefit-tile:hover {
+    border-color: var(--border-light-strong);
+    transform: translateY(-3px);
+}
+
+.benefit-num {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--nova-red-bright);
+    margin-bottom: 16px;
+}
+
+.benefit-tile-red .benefit-num {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.benefit-spec-tag {
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    color: var(--nova-gray-dark);
+    border-top: 1px solid var(--border-light);
+    padding-top: 14px;
+    margin-top: 24px;
+    text-transform: uppercase;
+}
+
+.benefit-tile-red .benefit-spec-tag {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.benefit-guarantee-bar {
+    background: var(--nova-black);
+    border: 1px solid var(--border-light);
+    padding: 20px 24px;
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* =====================================================
+   09. SECCIÓN 03: CTA PRINCIPAL (ROTURA CROMÁTICA)
+   ===================================================== */
+.cta-spread {
+    background-color: var(--nova-red);
+    color: var(--nova-white);
+    position: relative;
+    padding-top: clamp(80px, 10vw, 130px);
+    padding-bottom: clamp(80px, 10vw, 130px);
+    border-bottom: 1px solid var(--nova-red-dark);
+}
+
+.cta-title-giant {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7.5vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    color: var(--nova-white);
+    text-transform: uppercase;
+}
+
+.cta-lead-text {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.btn-cta-monumental {
+    background: var(--nova-black);
+    color: var(--nova-white);
+    font-family: var(--font-tech);
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 42px;
+    border: 2px solid var(--nova-black);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: var(--t-fast);
+}
+
+.btn-cta-monumental:hover {
+    background: var(--nova-white);
+    color: var(--nova-black);
+    border-color: var(--nova-white);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* =====================================================
+   10. SECCIÓN 04: SOCIAL PROOF (ANTES DE EXPLICACIÓN)
+   ===================================================== */
+.social-proof-spread {
+    background: radial-gradient(circle at 80% 20%, rgba(225, 6, 0, 0.06) 0%, transparent 50%),
+                var(--nova-black);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.quote-giant-editorial {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: var(--nova-white);
+    position: relative;
+    padding-left: 28px;
+    border-left: 4px solid var(--nova-red);
+}
+
+.quote-author-meta {
+    font-family: var(--font-tech);
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    color: var(--nova-gray-dark);
+    margin-top: 20px;
+    padding-left: 28px;
+}
+
+.quote-author-meta strong {
+    color: var(--nova-white);
+}
+
+/* Métricas Clave de Confianza */
+.social-metric-box {
+    background: var(--nova-black-soft);
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: var(--t-fast);
+}
+
+.social-metric-box:hover {
+    border-color: var(--nova-red);
+}
+
+.metric-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--nova-red-bright);
+    letter-spacing: -0.04em;
+}
+
+.metric-label {
     font-family: var(--font-tech);
     font-size: 0.75rem;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    color: var(--nova-gray-dark);
+    margin-top: 6px;
+    text-transform: uppercase;
 }
 
-.sheet-hero-word {
-    font-size: clamp(3rem, 7vw, 7rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
+/* Testimonios Secundarios */
+.secondary-testimonial-card {
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    height: 100%;
 }
 
-/* =====================================================
-   SECCIÓN 08 — 07 / APLICACIONES (EDITORIAL LAYOUT)
-   ===================================================== */
-.applications-spread {
-    padding: 140px 4vw;
-    background: var(--c-chalk);
-}
-
-.editorial-mockup-arrangement {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 5vw;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.mockup-frame-large {
-    position: relative;
-    border: 1px solid rgba(8, 9, 12, 0.12);
-    background: var(--c-pure-white);
-    padding: 16px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
-}
-
-.mockup-frame-large img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.mockup-editorial-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.mockup-frame-secondary {
-    border: 1px solid rgba(8, 9, 12, 0.12);
-    background: var(--c-pure-white);
-    padding: 12px;
-}
-
-.mockup-frame-secondary img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.mockup-story-text h3 {
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: -0.03em;
+.testimonial-stars {
+    color: var(--nova-red-bright);
+    letter-spacing: 4px;
+    font-size: 0.85rem;
     margin-bottom: 12px;
 }
 
 /* =====================================================
-   SECCIÓN 09 — 08 / DIGITAL (UI SYSTEM SPECIMEN)
+   11. SECCIÓN 05: EXPLICACIÓN (DESPUÉS DE SOCIAL PROOF)
    ===================================================== */
-.digital-spread {
-    padding: 130px 4vw;
-    background: var(--c-pure-white);
+.explanation-spread {
+    background: var(--nova-black-soft);
+    border-bottom: 1px solid var(--border-light);
 }
 
-.ui-specimen-strip {
-    width: 100%;
-    border-top: 1px solid var(--c-obsidian);
-    border-bottom: 1px solid var(--c-obsidian);
-    padding: 60px 0;
-    margin: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.ui-specimen-group span {
-    font-family: var(--font-tech);
-    font-size: 0.72rem;
-    color: var(--c-gray-500);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.nova-editorial-btn {
-    display: inline-block;
-    padding: 16px 36px;
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
+.process-step-editorial {
+    position: relative;
+    padding: 30px 24px;
+    background: var(--nova-black);
+    border: 1px solid var(--border-light);
+    height: 100%;
     transition: var(--t-fast);
-    border: none;
-}
-
-.btn-solid-noir {
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.btn-solid-noir:hover {
-    background: var(--c-cobalt);
-    color: var(--c-pure-white);
-}
-
-.btn-outline-noir {
-    background: transparent;
-    border: 2px solid var(--c-obsidian);
-    color: var(--c-obsidian);
-}
-
-.btn-outline-noir:hover {
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.btn-solid-lime {
-    background: var(--c-lime);
-    color: var(--c-obsidian);
-}
-
-.btn-solid-lime:hover {
-    background: var(--c-obsidian);
-    color: var(--c-lime);
-}
-
-/* =====================================================
-   SECCIÓN 10 — 09 / VOICE (DIRECTRICES VERBALES)
-   ===================================================== */
-.voice-spread {
-    padding: 140px 4vw;
-    background: var(--c-chalk);
-}
-
-.voice-editorial-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0;
-    border-top: 1px solid var(--c-obsidian);
-    border-bottom: 1px solid var(--c-obsidian);
-    margin: 50px 0;
-}
-
-.voice-column {
-    padding: 60px 40px;
-    border-right: 1px solid var(--c-obsidian);
-}
-
-.voice-column:last-child {
-    border-right: none;
-}
-
-.voice-column.voice-tone-col {
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-}
-
-.voice-col-kicker {
-    font-family: var(--font-tech);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    display: block;
-}
-
-.voice-giant-words {
-    font-size: clamp(2rem, 3.8vw, 3.8rem);
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-}
-
-.voice-giant-words.tone-lime {
-    color: var(--c-lime);
-}
-
-/* =====================================================
-   SECCIÓN 11 — 10 / CIERRE (FINAL MONUMENTAL)
-   ===================================================== */
-.cierre-spread {
-    min-height: 100vh;
-    padding: 140px 4vw 60px;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.cierre-monumental-title {
-    font-size: clamp(6rem, 24vw, 26rem);
+.process-step-editorial:hover {
+    border-color: var(--nova-red);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.step-num-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
     font-weight: 900;
-    line-height: 0.78;
+    line-height: 0.9;
+    color: var(--nova-red-bright);
     letter-spacing: -0.06em;
-    color: var(--c-chalk);
-    user-select: none;
+    margin-bottom: 14px;
 }
 
-.cierre-sub-quote {
-    font-size: clamp(1.8rem, 4vw, 4.2rem);
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    color: var(--c-lime);
-    margin-top: 20px;
+.step-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--nova-white);
+    margin-bottom: 12px;
 }
 
-.cierre-studio-colophon {
-    padding-top: 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 30px;
+.step-meta-indicator {
     font-family: var(--font-tech);
-    font-size: 0.8rem;
-    color: var(--c-gray-400);
-}
-
-.cierre-top-link {
-    color: var(--c-chalk);
-    text-decoration: none;
-    font-family: var(--font-tech);
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     letter-spacing: 2px;
+    color: var(--nova-gray-dark);
+    border-top: 1px solid var(--border-light);
+    padding-top: 12px;
+    margin-top: 20px;
     text-transform: uppercase;
 }
 
-.cierre-top-link:hover {
-    color: var(--c-lime);
+/* =====================================================
+   12. SECCIÓN 06: FAQ ACCESIBLE (ACORDEÓN MINIMALISTA)
+   ===================================================== */
+.faq-spread {
+    background-color: var(--nova-black);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.faq-accordion-group {
+    border-top: 1px solid var(--border-light);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-light);
+    transition: var(--t-fast);
+}
+
+.faq-trigger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--nova-white);
+    padding: clamp(20px, 3vw, 30px) 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition: var(--t-fast);
+    outline: none;
+}
+
+.faq-trigger:hover,
+.faq-trigger:focus-visible {
+    color: var(--nova-red-bright);
+}
+
+.faq-icon-cross {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-tech);
+    font-size: 1.1rem;
+    font-weight: 400;
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: var(--t-fast);
+    color: var(--nova-gray);
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon-cross {
+    background: var(--nova-red);
+    border-color: var(--nova-red);
+    color: var(--nova-white);
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--bezier-editorial), padding 0.3s ease;
+}
+
+.faq-content-inner {
+    padding-bottom: clamp(20px, 3vw, 32px);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #CCCCCC;
+    max-width: 900px;
 }
 
 /* =====================================================
-   12. MICRO-ANIMACIONES AL SCROLL (INTERSECTION OBSERVER)
+   13. SECCIÓN 07: PREFOOTER (CONVERSIÓN FINAL)
+   ===================================================== */
+.prefooter-spread {
+    background: linear-gradient(180deg, var(--nova-black) 0%, var(--nova-black-soft) 100%);
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    padding-top: clamp(80px, 11vw, 140px);
+    padding-bottom: clamp(80px, 11vw, 140px);
+}
+
+.prefooter-box {
+    border: 1px solid var(--border-light-strong);
+    background: var(--nova-black-card);
+    padding: clamp(36px, 6vw, 70px) clamp(24px, 5vw, 60px);
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.prefooter-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--nova-red);
+}
+
+.btn-prefooter-action {
+    background: var(--nova-red);
+    color: var(--nova-white);
+    font-family: var(--font-tech);
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 36px;
+    border: 1px solid var(--nova-red);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px var(--nova-red-glow);
+    transition: var(--t-fast);
+}
+
+.btn-prefooter-action:hover {
+    background: var(--nova-red-bright);
+    color: var(--nova-white);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(225, 6, 0, 0.45);
+}
+
+/* =====================================================
+   14. SECCIÓN 08: FOOTER (CONTRAPORTADA DE BRANDBOOK)
+   ===================================================== */
+.editorial-footer {
+    background-color: var(--nova-black);
+    padding-top: clamp(60px, 8vw, 100px);
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.footer-logo-svg {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    color: var(--nova-white);
+    margin-bottom: 20px;
+}
+
+.footer-col-title {
+    font-family: var(--font-tech);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--nova-white);
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8px;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 10px;
+}
+
+.footer-links-list a {
+    color: var(--nova-gray-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--t-fast);
+}
+
+.footer-links-list a:hover {
+    color: var(--nova-red-bright);
+    padding-left: 4px;
+}
+
+.footer-contact-item {
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    color: var(--nova-gray-dark);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-contact-item a {
+    color: var(--nova-white);
+    text-decoration: none;
+}
+
+.footer-contact-item a:hover {
+    color: var(--nova-red-bright);
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid var(--border-light);
+    margin-top: clamp(40px, 6vw, 70px);
+    padding-top: 24px;
+}
+
+/* =====================================================
+   15. BOTÓN VOLVER ARRIBA FLOTANTE
+   ===================================================== */
+.editorial-top-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
+    color: var(--nova-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--t-fast);
+    cursor: pointer;
+}
+
+.editorial-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.editorial-top-btn:hover {
+    background: var(--nova-red);
+    border-color: var(--nova-red);
+    color: var(--nova-white);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   16. ANIMACIONES & REVEAL EDITORIAL
    ===================================================== */
 .reveal-fade {
     opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.85s var(--bezier-editorial), transform 0.85s var(--bezier-editorial);
-    will-change: opacity, transform;
+    transform: translateY(24px);
+    transition: opacity 0.65s var(--bezier-editorial), transform 0.65s var(--bezier-editorial);
 }
 
 .reveal-fade.active {
@@ -1030,103 +1318,201 @@ body {
     transform: translateY(0);
 }
 
-.reveal-fade.delay-1 { transition-delay: 0.12s; }
-.reveal-fade.delay-2 { transition-delay: 0.24s; }
-
-/* Botón volver arriba flotante */
-.editorial-top-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 4vw;
-    width: 48px;
-    height: 48px;
-    background: var(--c-obsidian);
-    color: var(--c-chalk);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 990;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-    transition: var(--t-fast);
+.delay-1 {
+    transition-delay: 0.12s;
 }
 
-.editorial-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.delay-2 {
+    transition-delay: 0.24s;
 }
 
-.editorial-top-btn:hover {
-    background: var(--c-lime);
-    color: var(--c-obsidian);
+.delay-3 {
+    transition-delay: 0.36s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Respeto a usuarios con sensibilidad a movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal-fade {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 /* =====================================================
-   13. RESPONSIVE REAL (IPHONE FIRST & DESKTOP CANVAS)
+   16.B. ESTILOS DE CAMPAÑA IA & RESEÑAS DEMO TRANSPARENTES
    ===================================================== */
-@media (max-width: 991px) {
-    .brandbook-spread {
-        padding: 100px 5vw 70px;
+.demo-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(225, 6, 0, 0.14);
+    border: 1px solid var(--border-red);
+    padding: 3px 10px;
+    font-family: var(--font-tech);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: var(--nova-red-bright);
+    text-transform: uppercase;
+}
+
+.demo-disclaimer-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed var(--border-light);
+    padding: 16px 20px;
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: var(--nova-gray-dark);
+    line-height: 1.6;
+}
+
+.demo-card-lead {
+    background: var(--nova-black-card);
+    border: 1px solid var(--border-light);
+    transition: var(--t-fast);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-card-lead:hover {
+    border-color: var(--border-light-strong);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.demo-img-frame {
+    position: relative;
+    overflow: hidden;
+    background: var(--nova-black-soft);
+}
+
+.demo-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s var(--bezier-editorial);
+}
+
+.demo-card-lead:hover .demo-img-frame img {
+    transform: scale(1.03);
+}
+
+.demo-quote-text {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.25vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--nova-white);
+}
+
+.demo-client-meta {
+    font-family: var(--font-tech);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    color: var(--nova-gray-dark);
+    text-transform: uppercase;
+}
+
+.unboxing-hero-banner {
+    border: 1px solid var(--border-light);
+    background: var(--nova-black);
+    overflow: hidden;
+    position: relative;
+}
+
+.unboxing-hero-banner img {
+    width: 100%;
+    height: clamp(260px, 32vw, 420px);
+    object-fit: cover;
+    filter: contrast(105%) brightness(95%);
+    transition: var(--t-smooth);
+}
+
+.unboxing-hero-banner:hover img {
+    filter: contrast(110%) brightness(100%);
+}
+
+.unboxing-meta-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-light);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =====================================================
+   17. RESPONSIVE CALIBRADO (375PX, 390PX, 430PX, TABLET)
+   ===================================================== */
+@media (max-width: 991.98px) {
+    .corner-spec {
+        display: none;
     }
-    .concept-editorial-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
+
+    .hero-spread {
+        padding-top: 100px;
     }
-    .identity-spread {
-        flex-direction: column;
+
+    .hero-form-dossier {
+        margin-top: 36px;
     }
-    .identity-left-block,
-    .identity-right-block {
-        width: 100%;
-        padding: 80px 5vw;
+
+    .quote-giant-editorial {
+        font-size: 1.45rem;
+        padding-left: 18px;
     }
-    .color-landscapes-container {
-        flex-direction: column;
-        min-height: auto;
-    }
-    .color-plane {
-        min-height: 200px;
-    }
-    .editorial-mockup-arrangement {
-        grid-template-columns: 1fr;
-    }
-    .voice-editorial-strip {
-        grid-template-columns: 1fr;
-    }
-    .voice-column {
-        border-right: none;
-        border-bottom: 1px solid var(--c-obsidian);
+
+    .nav-contact-link {
+        display: none;
     }
 }
 
-@media (max-width: 576px) {
-    .brandbook-spread {
-        padding: 80px 5vw 50px;
+@media (max-width: 575.98px) {
+    .editorial-nav {
+        padding: 12px 16px;
     }
-    .hero-giant-title {
-        font-size: 4.8rem;
-    }
-    .hero-concept-phrase {
-        max-width: 100%;
-        font-size: 1.6rem;
-    }
-    .type-giant-letters {
-        font-size: 5rem;
-    }
-    .cierre-monumental-title {
-        font-size: 5.2rem;
-    }
-    .toc-link-row {
-        padding: 20px 15px;
-    }
-    .toc-name {
-        font-size: 1.25rem;
-    }
-    .corner-spec {
+
+    .nav-chapter-badge {
         display: none;
+    }
+
+    .hero-form-dossier {
+        padding: 20px 16px;
+    }
+
+    .benefit-tile {
+        padding: 24px 18px;
+    }
+
+    .btn-cta-monumental,
+    .btn-prefooter-action {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-spec-strip {
+        gap: 8px 16px;
     }
 }

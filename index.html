@@ -4,602 +4,904 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVA — Manual de Identidad Visual & Brandbook Digital</title>
-    <meta name="description" content="Manual de Identidad Visual y Brandbook Digital de NOVA. Dirección de arte editorial, sistema tipográfico, paleta cromática, arquitectura de marca y directrices de diseño contemporáneo.">
+    <title>NOVA — Indumentaria Urbana Técnica & Brandbook Digital Oficial</title>
+    <meta name="description" content="NOVA es una propuesta de indumentaria urbana técnica y plataforma de diseño editorial. Colecciones de edición limitada con patronaje anatómico y tejidos de alto rendimiento. Solicita tu acceso exclusivo.">
 
-    <!-- Tipografías: Montserrat & Space Grotesk -->
+    <!-- Open Graph / Meta de Campaña -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NOVA — Indumentaria Urbana Técnica & Brandbook Oficial">
+    <meta property="og:description" content="Diseño arquitectónico de precisión, tejidos de alto rendimiento y producción limitada. Conoce la colección y solicita tu acceso privado.">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Tipografías Oficiales: Montserrat & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Hoja de Estilos Editorial Asimétrica -->
+    <!-- Bootstrap 5.3 Estructural (Grid 12 Columnas) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Hoja de Estilos: Sistema Editorial Asimétrico & Alta Conversión -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
     <!-- Línea superior de avance de lectura -->
-    <div id="read-progress"></div>
-
-    <!-- Notificación toast minimalista -->
-    <div id="toast-notice">
-        <span id="toast-msg">CÓDIGO COPIADO</span>
-    </div>
+    <div id="read-progress" aria-hidden="true"></div>
 
     <!-- =====================================================
-         NAVEGACIÓN FIJA MINIMALISTA (ADAPTATIVA)
+         01 — HEADER (MINIMALISTA / ENFOCADO EN CONVERSIÓN)
     ====================================================== -->
     <header class="editorial-nav" id="mainNav">
-        <a href="#portada" class="brand-mark" aria-label="Portada NOVA">
-            NOVA
-            <span class="brand-mark-dot"></span>
+        <a href="#hero" class="brand-mark" aria-label="NOVA Inicio y Portada">
+            <!-- Logotipo Vectorial Monumental Oficial -->
+            <svg class="nova-logo-svg nova-logo-nav" viewBox="0 0 280 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo NOVA">
+                <path d="M0 56V4h14.8l27.6 34.8V4H56v52H41.2L13.6 21.2V56H0z"/>
+                <path d="M102 57c-17.5 0-31.5-12.8-31.5-29S84.5-1 102-1s31.5 12.8 31.5 29-14 29-31.5 29zm0-13.2c9.8 0 17.5-7 17.5-15.8S111.8 12.2 102 12.2s-17.5 7-17.5 15.8 7.7 15.8 17.5 15.8z"/>
+                <path d="M140 4h14.8l18.6 38.6L192 4h14.8L180.5 56h-14.2L140 4z"/>
+                <path d="M242 4h14.2l23.8 52h-15.2l-5.6-13h-20.4l-5.6 13H218L242 4zm12.6 26.6l-6.8-15.6-6.8 15.6h13.6z"/>
+            </svg>
+            <span class="nav-chapter-badge" id="navCounter" aria-label="Capítulo actual">01 / 08</span>
         </a>
 
-        <div class="nav-indicator">
-            <span class="d-none d-sm-inline" style="font-size:0.75rem; color:inherit; opacity:0.6;">BRANDBOOK DIGITAL</span>
-            <span class="nav-chapter-badge" id="navCounter">01 / 09</span>
+        <!-- Único bloque de acción orientado a contacto y conversión -->
+        <div class="nav-action-group">
+            <a href="tel:+576013906682" class="nav-contact-link" title="Línea de Asesoría Directa">
+                <span class="nav-contact-dot" aria-hidden="true"></span>
+                <span>ASESORÍA // +57 (601) 390-NOVA</span>
+            </a>
+            <a href="#hero-form" class="nav-cta-btn" id="navCtaBtn">
+                SOLICITAR ACCESO →
+            </a>
         </div>
     </header>
 
+    <main id="main-content">
 
-    <!-- =====================================================
-         SECCIÓN 00 — PORTADA EDITORIAL (100VW / 100VH)
-    ====================================================== -->
-    <section id="portada" class="brandbook-spread hero-spread spread-fullscreen" data-chapter="01 / 09" data-nav-style="light">
-        <span class="corner-spec top-right">[ IDENTITY SPEC // 2026 ]</span>
-        <span class="corner-spec bottom-right">+ REF. BOGOTÁ / COLOMBIA +</span>
+        <!-- =====================================================
+             02 — HERO + FORMULARIO (PORTADA BRANDBOOK + LANDING)
+        ====================================================== -->
+        <section id="hero" class="brandbook-spread hero-spread" data-chapter="01 / 08">
+            <span class="corner-spec top-right">[ IDENTITY SPEC // DROP 2026 ]</span>
+            <span class="corner-spec bottom-right">+ REF. BOGOTÁ / LATAM +</span>
 
-        <div class="hero-asymmetric-row reveal-fade">
-            <div>
-                <span class="chapter-tag">SISTEMA DE IDENTIDAD VISUAL</span>
-                <p class="mono-meta mb-0" style="font-size:0.85rem; letter-spacing:2px; font-weight:700;">MANUAL DE MARCA — EDICIÓN 2026</p>
-            </div>
-            <div class="hero-meta-block">
-                <p>COORD: 4°35'N 74°04'W<br>SISTEMA: GEOMÉTRICO ASIMÉTRICO</p>
-            </div>
-        </div>
+            <div class="container-fluid px-lg-5">
+                <div class="row align-items-center g-4 g-xl-5">
 
-        <div class="my-auto py-4">
-            <span class="hero-giant-title reveal-fade">NOVA</span>
-            <h1 class="hero-concept-phrase reveal-fade delay-1">
-                "Una identidad creada para evolucionar."
-            </h1>
-        </div>
+                    <!-- Lado Izquierdo: Mensaje Monumental & Manifiesto de Marca -->
+                    <div class="col-12 col-lg-7 reveal-fade">
+                        <div class="hero-editorial-badge">
+                            <span>01 / IDENTIDAD EN MOVIMIENTO — EDICIÓN 2026</span>
+                        </div>
 
-        <div class="hero-asymmetric-row pt-4" style="border-top: 1px solid rgba(8,9,12,0.1);">
-            <a href="#indice" class="hero-scroll-btn">
-                SCROLL TO EXPLORE ↓
-            </a>
-            <div class="hero-meta-block">
-                <p class="mb-0">DIRECCIÓN DE ARTE // BRANDBOOK OFICIAL</p>
-            </div>
-        </div>
-    </section>
+                        <h1 class="nova-h1-hero mb-3">
+                            La identidad<br>
+                            que viste tu<br>
+                            <span class="text-red">próxima versión.</span>
+                        </h1>
 
+                        <p class="nova-lead mb-4">
+                            Indumentaria urbana técnica y diseño de precisión geométrica. Confección de bajo volumen con textiles de alto rendimiento para quienes lideran con autoridad silenciosa.
+                        </p>
 
-    <!-- =====================================================
-         SECCIÓN 01 — ÍNDICE DEL BRANDBOOK
-    ====================================================== -->
-    <section id="indice" class="brandbook-spread toc-spread" data-chapter="ÍNDICE" data-nav-style="dark">
-        <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-3">
-            <div>
-                <span class="chapter-tag">CONTENIDO GENERAL</span>
-                <h2 class="display-3 fw-bold" style="color:var(--c-chalk); letter-spacing:-0.03em;">Índice Editorial</h2>
-            </div>
-            <p class="font-tech text-muted mb-0">09 CAPÍTULOS DE IDENTIDAD</p>
-        </div>
+                        <!-- Especificaciones Rápidas del Producto -->
+                        <div class="hero-spec-strip">
+                            <div class="hero-spec-item">
+                                <span class="text-red">●</span> <strong>ALGODÓN 320 GSM</strong> OEKO-TEX®
+                            </div>
+                            <div class="hero-spec-item">
+                                <span class="text-red">●</span> <strong>SERIE LIMITADA</strong> NUMERADA
+                            </div>
+                            <div class="hero-spec-item">
+                                <span class="text-red">●</span> <strong>CORTE ANATÓMICO</strong> ASIMÉTRICO
+                            </div>
+                        </div>
 
-        <div class="toc-horizontal-strip reveal-fade">
-            <a href="#concepto" class="toc-link-row">
-                <span class="toc-name">01 &nbsp; Concepto</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#identidad" class="toc-link-row">
-                <span class="toc-name">02 &nbsp; Identidad</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#color" class="toc-link-row">
-                <span class="toc-name">03 &nbsp; Color</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#tipografia" class="toc-link-row">
-                <span class="toc-name">04 &nbsp; Tipografía</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#sistema-grafico" class="toc-link-row">
-                <span class="toc-name">05 &nbsp; Sistema gráfico</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#composiciones" class="toc-link-row">
-                <span class="toc-name">06 &nbsp; Composiciones</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#aplicaciones" class="toc-link-row">
-                <span class="toc-name">07 &nbsp; Aplicaciones</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#digital" class="toc-link-row">
-                <span class="toc-name">08 &nbsp; Digital</span>
-                <span class="toc-idx">→</span>
-            </a>
-            <a href="#voz" class="toc-link-row">
-                <span class="toc-name">09 &nbsp; Voz de marca</span>
-                <span class="toc-idx">→</span>
-            </a>
-        </div>
-    </section>
+                        <!-- Miniatura Editorial Integrada de Soporte Real -->
+                        <div class="row mt-4 g-3 d-none d-md-flex align-items-stretch">
+                            <div class="col-6">
+                                <div class="brandbook-photo-plate h-100" style="min-height: 240px;">
+                                    <span class="plate-corner-cross tl">+</span>
+                                    <span class="plate-corner-cross tr">+</span>
+                                    <div class="plate-header-meta">
+                                        <span>[ LÁMINA 01 // INDUMENTARIA ]</span>
+                                        <span class="text-red">SPEC 2026</span>
+                                    </div>
+                                    <img src="img/nova-hoodie-hero.jpg" alt="Buzo Hoodie Arquitectónico NOVA — Campaña Oficial" loading="eager">
+                                    <div class="plate-footer-caption">
+                                        <span>HOODIE ASIMÉTRICO 320 GSM</span>
+                                        <span class="text-gray-dark">FIG. 01</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="brandbook-photo-plate h-100" style="min-height: 240px;">
+                                    <span class="plate-corner-cross tl">+</span>
+                                    <span class="plate-corner-cross tr">+</span>
+                                    <div class="plate-header-meta">
+                                        <span>[ MANUAL OFICIAL // DIRECCIÓN ]</span>
+                                        <span class="text-white">EDICIÓN 01</span>
+                                    </div>
+                                    <img src="img/hero_brand_manual.jpg" alt="Manual de Identidad Visual NOVA" loading="eager">
+                                    <div class="plate-footer-caption">
+                                        <span>SISTEMA DE IDENTIDAD GLOBAL</span>
+                                        <span class="text-gray-dark">FIG. 02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Lado Derecho: Dossier de Registro de Alta Conversión -->
+                    <div class="col-12 col-lg-5 reveal-fade delay-1">
+                        <div class="hero-form-dossier" id="heroFormContainer">
+                            <div class="dossier-tag">
+                                <span>[ DOSSIER DE ACCESO PRIVADO ]</span>
+                                <span>LOTE 01 // ABIERTO</span>
+                            </div>
 
-    <!-- =====================================================
-         SECCIÓN 02 — 01 / CONCEPTO
-    ====================================================== -->
-    <section id="concepto" class="brandbook-spread concept-spread" data-chapter="01 / 09" data-nav-style="light">
-        <div class="concept-watermark-number">01</div>
-        <span class="corner-spec top-right">[ MANIFIESTO Y FILOSOFÍA ]</span>
+                            <h2 class="dossier-title">SOLICITA TU ACCESO PREFERENCIAL</h2>
+                            <p class="dossier-subtext">
+                                Recibe el catálogo confidencial de preventa, tabla milimétrica de tallaje y reserva garantizada antes del lanzamiento general.
+                            </p>
 
-        <span class="chapter-tag">01 / CONCEPTO</span>
+                            <!-- Formulario Principal -->
+                            <form id="hero-form" novalidate>
+                                <!-- Campo: Nombre -->
+                                <div class="form-field-group" id="group-nombre">
+                                    <label for="form-nombre" class="nova-label">
+                                        Nombre y Apellido <span class="req">*</span>
+                                    </label>
+                                    <input type="text" id="form-nombre" name="nombre" class="nova-input" placeholder="Ej. Mateo Restrepo" required autocomplete="name">
+                                    <div class="field-error-msg" id="error-nombre">Por favor ingresa tu nombre completo.</div>
+                                </div>
 
-        <div class="concept-editorial-layout">
-            <div class="reveal-fade">
-                <h2 class="concept-huge-statement">
-                    NOVA representa el instante en que una persona decide forjar una nueva versión de sí misma.
-                </h2>
-                <div class="concept-semantic-badges">
-                    <span class="semantic-badge">Autenticidad</span>
-                    <span class="semantic-badge">Determinación</span>
-                    <span class="semantic-badge">Libertad</span>
-                    <span class="semantic-badge">Precisión</span>
+                                <!-- Campo: Correo -->
+                                <div class="form-field-group" id="group-email">
+                                    <label for="form-email" class="nova-label">
+                                        Correo Electrónico <span class="req">*</span>
+                                    </label>
+                                    <input type="email" id="form-email" name="email" class="nova-input" placeholder="tu@correo.com" required autocomplete="email">
+                                    <div class="field-error-msg" id="error-email">Ingresa un correo electrónico válido.</div>
+                                </div>
+
+                                <!-- Campo: Teléfono / WhatsApp -->
+                                <div class="form-field-group" id="group-telefono">
+                                    <label for="form-telefono" class="nova-label">
+                                        WhatsApp o Teléfono <span class="req">*</span>
+                                    </label>
+                                    <input type="tel" id="form-telefono" name="telefono" class="nova-input" placeholder="+57 300 000 0000" required autocomplete="tel">
+                                    <div class="field-error-msg" id="error-telefono">Ingresa un número telefónico de contacto.</div>
+                                </div>
+
+                                <!-- Campo: Interés de Colección -->
+                                <div class="form-field-group" id="group-interes">
+                                    <label for="form-interes" class="nova-label">
+                                        Pieza de Mayor Interés
+                                    </label>
+                                    <select id="form-interes" name="interes" class="nova-select">
+                                        <option value="indumentaria">Colección Indumentaria Técnica (Chaquetas & Hoodies)</option>
+                                        <option value="tote">Accesorios & Tote Bag Editorial de Algodón</option>
+                                        <option value="completo">Catálogo Completo de la Edición 2026</option>
+                                        <option value="corporativo">Pedido Corporativo / Consultoría de Marca</option>
+                                    </select>
+                                </div>
+
+                                <!-- Checkbox Legal de Datos -->
+                                <div class="form-check-editorial" id="group-consent">
+                                    <input type="checkbox" id="form-consent" name="consent" required checked>
+                                    <label for="form-consent">
+                                        Acepto la <a href="#politica-datos" class="text-white">política de tratamiento de datos</a> de NOVA para recibir el catálogo y atención personalizada.
+                                    </label>
+                                </div>
+                                <div class="field-error-msg mb-2" id="error-consent" style="display: none;">Debes aceptar la política de tratamiento de datos para continuar.</div>
+
+                                <!-- Botón de Conversión Principal -->
+                                <button type="submit" class="btn-submit-hero" id="form-submit-btn">
+                                    <span>QUIERO MI ACCESO EXCLUSIVO</span>
+                                    <span aria-hidden="true">→</span>
+                                </button>
+
+                                <div class="dossier-microcopy">
+                                    ⚡ Te tomará menos de 60 segundos. Sin llamadas invasivas ni cobros automáticos.
+                                </div>
+                            </form>
+
+                            <!-- Estado de Éxito Posterior al Envío (Integración Demo) -->
+                            <div class="form-success-message" id="formSuccessState">
+                                <div class="success-icon-badge">✓</div>
+                                <h3 class="nova-h3-title text-white mb-2">¡SOLICITUD REGISTRADA!</h3>
+                                <p class="nova-body mb-3">
+                                    Bienvenido a la comunidad NOVA. Te hemos enviado un correo de confirmación con tu enlace al catálogo privado. Un asesor de diseño se comunicará contigo vía WhatsApp en breve.
+                                </p>
+                                <button type="button" class="btn-submit-hero w-100" id="btnResetForm">
+                                    ENVIAR OTRA CONSULTA
+                                </button>
+                                <div class="success-demo-notice">
+                                    [ DEMO MODE: Formulario validado del lado del cliente listo para conectar con tu webhook o CRM ]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="concept-narrative-block reveal-fade delay-1">
-                <p>
-                    <strong>¿Qué es NOVA?</strong><br>
-                    Es una propuesta de moda urbana contemporánea y una plataforma de diseño. Concibe la indumentaria como una armadura sobria y una extensión directa de la personalidad individual.
-                </p>
-                <p>
-                    <strong>¿Qué busca comunicar?</strong><br>
-                    Seguridad silenciosa, rigor geométrico y dinamismo. Eliminamos lo superfluo para que el mensaje conserve contundencia: la verdadera vanguardia no necesita sobrecargar la forma.
-                </p>
-                <div class="viewport-rule"></div>
-                <p class="font-tech text-muted mb-0" style="font-size:0.8rem;">
-                    PRINCIPIO GUÍA: EVOLUCIÓN PERMANENTE DEL INDIVIDUO.
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- =====================================================
-         SECCIÓN 03 — 02 / IDENTIDAD (BLOQUE 62VW NOIR)
-    ====================================================== -->
-    <section id="identidad" class="identity-spread" data-chapter="02 / 09" data-nav-style="dark">
-        <div class="identity-left-block reveal-fade">
-            <div>
-                <span class="chapter-tag" style="color:var(--c-lime);">02 / IDENTIDAD</span>
-                <div class="identity-wordmark-large">NOVA</div>
-            </div>
+        <!-- =====================================================
+             03 — BENEFICIOS (ASIMETRÍA EDITORIAL / VALOR REAL)
+        ====================================================== -->
+        <section id="beneficios" class="brandbook-spread benefits-spread" data-chapter="02 / 08">
+            <span class="corner-spec top-left">[ 02 // VALOR REAL ]</span>
 
-            <div>
-                <p style="font-size:1.35rem; font-weight:400; color:var(--c-chalk); max-width:45vw;">
-                    El imagotipo tipográfico se fundamenta en proporciones geométricas puras, trazos contundentes y ausencia total de adornos secundarios.
-                </p>
-                <div class="identity-blueprint-spec">
-                    ANATOMÍA DE LA MARCA // TRACKING CALIBRADO: +120PT // MODULACIÓN: 1:1.618 // GROSOR DE TRAZO: HOMOGÉNEO Y AUDAZ
-                </div>
-            </div>
-        </div>
-
-        <div class="identity-right-block reveal-fade delay-1">
-            <div class="d-flex justify-content-between align-items-start">
-                <span class="font-tech text-muted">[ ANÁLISIS FORMAL ]</span>
-                <span class="vertical-brand-label">SISTEMA TIPOGRÁFICO PURO</span>
-            </div>
-
-            <div class="my-auto py-5">
-                <h3 class="display-6 fw-bold mb-3" style="color:var(--c-chalk); letter-spacing:-0.03em;">Tipografía como Isotipo</h3>
-                <p style="color:var(--c-gray-400); font-size:1rem; line-height:1.7;">
-                    En NOVA prescindimos de símbolos figurativos o isotipos tradicionales. Las cuatro letras que forman la palabra operan simultáneamente como nombre y como ícono arquitectónico.
-                </p>
-            </div>
-
-            <div class="font-tech text-muted" style="font-size:0.75rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
-                VERSIÓN 1.0 APROBADA // MANUAL DE IDENTIDAD GLOBAL
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 04 — 03 / COLOR (SUPERFICIES DE 100VW)
-    ====================================================== -->
-    <section id="color" class="brandbook-spread color-spread" data-chapter="03 / 09" data-nav-style="light">
-        <div class="color-header-pad">
-            <span class="chapter-tag">03 / COLOR</span>
-            <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Sistema Cromático</h2>
-            <p class="lead" style="max-width:680px; color:var(--c-gray-600);">
-                Grandes planos cromáticos interconectados. El color domina la percepción visual sin confinarse dentro de pequeñas cajas.
-            </p>
-        </div>
-
-        <div class="color-landscapes-container reveal-fade">
-            
-            <!-- Plano 01: NOVA Obsidian -->
-            <div class="color-plane plane-obsidian" data-copy-hex="#08090C">
-                <div>
-                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
-                    <h3 class="plane-name mt-2">NOVA OBSIDIAN</h3>
-                </div>
-                <div class="plane-specs">
-                    <p class="mb-0">HEX: #08090C<br>RGB: 8, 9, 12<br>CMYK: 75, 68, 65, 90<br>PANTONE: BLACK 6 C</p>
-                </div>
-            </div>
-
-            <!-- Plano 02: NOVA Cobalt -->
-            <div class="color-plane plane-cobalt" data-copy-hex="#0824E0">
-                <div>
-                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
-                    <h3 class="plane-name mt-2">NOVA COBALT</h3>
-                </div>
-                <div class="plane-specs">
-                    <p class="mb-0">HEX: #0824E0<br>RGB: 8, 36, 224<br>CMYK: 95, 80, 0, 0<br>PANTONE: 2728 C</p>
-                </div>
-            </div>
-
-            <!-- Plano 03: NOVA Lime -->
-            <div class="color-plane plane-lime" data-copy-hex="#C8FF00">
-                <div>
-                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
-                    <h3 class="plane-name mt-2">NOVA LIME</h3>
-                </div>
-                <div class="plane-specs">
-                    <p class="mb-0">HEX: #C8FF00<br>RGB: 200, 255, 0<br>CMYK: 25, 0, 100, 0<br>PANTONE: 388 C</p>
-                </div>
-            </div>
-
-            <!-- Plano 04: NOVA Chalk -->
-            <div class="color-plane plane-chalk" data-copy-hex="#FFFFFF">
-                <div>
-                    <span class="plane-copy-cue">CLIC PARA COPIAR HEX</span>
-                    <h3 class="plane-name mt-2">NOVA CHALK</h3>
-                </div>
-                <div class="plane-specs">
-                    <p class="mb-0">HEX: #FFFFFF<br>RGB: 255, 255, 255<br>CMYK: 0, 0, 0, 0<br>PANTONE: WHITE C</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 05 — 04 / TYPOGRAPHY (ESCULTURA TIPOGRÁFICA)
-    ====================================================== -->
-    <section id="tipografia" class="brandbook-spread typography-spread" data-chapter="04 / 09" data-nav-style="light">
-        <span class="chapter-tag">04 / TYPOGRAPHY</span>
-        
-        <div class="type-giant-canvas reveal-fade">
-            <span class="type-giant-letters">Aa</span>
-            <p class="type-cross-statement">
-                NOVA IS A SYSTEM OF IDEAS.
-            </p>
-        </div>
-
-        <!-- Cinta Tipográfica Continua -->
-        <div class="type-runway-ticker">
-            <div class="ticker-inner">
-                NOVA MONTSERRAT GROTESQUE // REGULAR MEDIUM BOLD BLACK // THE FUTURE IS IN MOTION // NOVA MONTSERRAT GROTESQUE // REGULAR MEDIUM BOLD BLACK // 
-            </div>
-        </div>
-
-        <!-- Laboratorio Tipográfico Interactivo -->
-        <div class="type-live-lab reveal-fade delay-1">
-            <div class="type-lab-controls">
-                <div style="flex:1; max-width:600px;">
-                    <label for="labTextInput" class="font-tech text-muted mb-2 d-block">PROBADOR TIPOGRÁFICO EDITORIAL:</label>
-                    <input type="text" id="labTextInput" class="type-lab-input" value="NOVA IDENTITY IN MOTION" placeholder="Escribe aquí para probar...">
-                </div>
-                <div>
-                    <label for="labSizeSlider" class="font-tech text-muted mb-2 d-block">ESCALA: <span id="labSliderVal">48px</span></label>
-                    <input type="range" id="labSizeSlider" min="20" max="96" value="48" style="width:160px; accent-color:var(--c-obsidian);">
-                </div>
-            </div>
-
-            <div class="type-lab-output" id="labTextOutput" style="font-size:48px;">
-                NOVA IDENTITY IN MOTION
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 06 — 05 / SISTEMA GRÁFICO (SVG SYSTEM)
-    ====================================================== -->
-    <section id="sistema-grafico" class="brandbook-spread graphic-spread" data-chapter="05 / 09" data-nav-style="light">
-        <div class="d-flex justify-content-between align-items-baseline flex-wrap">
-            <div>
-                <span class="chapter-tag">05 / SISTEMA GRÁFICO</span>
-                <h2 class="display-4 fw-bold" style="letter-spacing:-0.03em;">Morfología & Vectorial</h2>
-            </div>
-            <p class="font-tech text-muted mb-0">ESPECIFICACIÓN ARQUITECTÓNICA</p>
-        </div>
-
-        <!-- Lienzo SVG Editorial a todo el ancho -->
-        <div class="svg-architectural-viewport reveal-fade">
-            <div class="d-flex justify-content-between font-tech text-muted mb-3" style="font-size:0.75rem;">
-                <span>GRID DE CONSTRUCCIÓN VECTORIAL</span>
-                <span>COTAS: X / 2X / 4X</span>
-            </div>
-
-            <svg class="svg-canvas-embed" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Malla de retícula infinita -->
-                <line x1="0" y1="80" x2="1000" y2="80" stroke="#e9ecf1" stroke-width="1"/>
-                <line x1="0" y1="160" x2="1000" y2="160" stroke="#08090c" stroke-width="1" stroke-dasharray="4 4"/>
-                <line x1="0" y1="240" x2="1000" y2="240" stroke="#e9ecf1" stroke-width="1"/>
-                
-                <line x1="200" y1="0" x2="200" y2="320" stroke="#e9ecf1" stroke-width="1"/>
-                <line x1="500" y1="0" x2="500" y2="320" stroke="#08090c" stroke-width="1"/>
-                <line x1="800" y1="0" x2="800" y2="320" stroke="#e9ecf1" stroke-width="1"/>
-
-                <!-- Círculos de enfoque y arcos de proporción -->
-                <circle cx="500" cy="160" r="110" stroke="#0824e0" stroke-width="1.5" stroke-dasharray="6 6"/>
-                <circle cx="500" cy="160" r="50" stroke="#c8ff00" stroke-width="2"/>
-                <circle cx="200" cy="160" r="4" fill="#08090c"/>
-                <circle cx="800" cy="160" r="4" fill="#08090c"/>
-
-                <!-- Logotipo proyectado en la retícula -->
-                <text x="500" y="180" font-family="'Montserrat', sans-serif" font-weight="900" font-size="78" fill="#08090c" text-anchor="middle" letter-spacing="12">NOVA</text>
-
-                <!-- Cotas de medida -->
-                <text x="500" y="300" font-family="'Space Grotesk', monospace" font-size="11" fill="#7b8192" text-anchor="middle">ÁREA DE RESERVA OBLIGATORIA: 2X</text>
-            </svg>
-
-            <div class="d-flex justify-content-between font-tech text-muted mt-3" style="font-size:0.75rem;">
-                <span>EJE PRINCIPAL DE ASIMETRÍA</span>
-                <span>STATUS: NORMA APROBADA</span>
-            </div>
-        </div>
-
-        <div class="graphic-principles-row reveal-fade delay-1">
-            <div class="principle-item">
-                <h4>01 / Retícula Estructural</h4>
-                <p>Las composiciones se rigen por subdivisiones métricas que garantizan equilibrio y tensión visual sin encerrar los elementos en cajas.</p>
-            </div>
-            <div class="principle-item">
-                <h4>02 / Proporción de Trazo</h4>
-                <p>El grosor tipográfico se mantiene en relación directa con el espacio negativo circundante para una máxima nitidez visual.</p>
-            </div>
-            <div class="principle-item">
-                <h4>03 / Dinamismo Asimétrico</h4>
-                <p>Se favorecen las jerarquías disonantes donde un glifo de gran escala dialoga armónicamente con micro-metadatos técnicos.</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 07 — 06 / COMPOSICIONES (LÁMINAS DE BRANDBOOK)
-    ====================================================== -->
-    <section id="composiciones" class="brandbook-spread compositions-spread" data-chapter="06 / 09" data-nav-style="dark">
-        <div class="px-4 mb-3">
-            <span class="chapter-tag" style="color:var(--c-lime);">06 / COMPOSITIONS</span>
-            <h2 class="display-3 fw-bold" style="color:var(--c-chalk); letter-spacing:-0.04em;">Láminas Editoriales</h2>
-            <p style="color:var(--c-gray-400); max-width:600px;">
-                Cuatro estudios de maquetación pura que exploran el espacio, el peso y el contraste de la marca a escala monumental.
-            </p>
-        </div>
-
-        <div class="composition-sheets-canvas reveal-fade">
-            
-            <!-- Lámina 01 -->
-            <div class="editorial-poster-sheet sheet-dark">
-                <div class="d-flex justify-content-between sheet-num">
-                    <span>POSTER // 01</span>
-                    <span>NOIR CONTRAST</span>
-                </div>
-                <div class="my-auto text-center">
-                    <span class="sheet-hero-word" style="color:var(--c-chalk);">N</span>
-                </div>
-                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:var(--c-gray-500);">
-                    <span>SCALE: MAXIMUM</span>
-                    <span>01 / 04</span>
-                </div>
-            </div>
-
-            <!-- Lámina 02 -->
-            <div class="editorial-poster-sheet sheet-chalk">
-                <div class="d-flex justify-content-between sheet-num">
-                    <span>POSTER // 02</span>
-                    <span>TYPO MANIFESTO</span>
-                </div>
-                <div class="my-auto">
-                    <h3 class="display-5 fw-bold mb-3" style="letter-spacing:-0.03em;">VISTE TU PRÓXIMA VERSIÓN.</h3>
-                    <p style="font-size:1rem; color:var(--c-gray-600);">La indumentaria contemporánea como declaración de autonomía.</p>
-                </div>
-                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:var(--c-gray-500);">
-                    <span>EDITORIAL SPREAD</span>
-                    <span>02 / 04</span>
-                </div>
-            </div>
-
-            <!-- Lámina 03 -->
-            <div class="editorial-poster-sheet sheet-cobalt">
-                <div class="d-flex justify-content-between sheet-num" style="color:rgba(255,255,255,0.7);">
-                    <span>POSTER // 03</span>
-                    <span>COBALT ESSENCE</span>
-                </div>
-                <div class="my-auto text-center">
-                    <div class="display-2 fw-bold" style="letter-spacing:-0.04em;">NOVA</div>
-                    <span class="font-tech" style="letter-spacing:3px; font-size:0.8rem;">SYSTEM IDENTITY</span>
-                </div>
-                <div class="d-flex justify-content-between font-tech" style="font-size:0.75rem; color:rgba(255,255,255,0.6);">
-                    <span>VANGUARD SERIES</span>
-                    <span>03 / 04</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 08 — 07 / APLICACIONES (EDITORIAL REAL)
-    ====================================================== -->
-    <section id="aplicaciones" class="brandbook-spread applications-spread" data-chapter="07 / 09" data-nav-style="light">
-        <span class="chapter-tag">07 / APPLICATIONS</span>
-        <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Puntos de Contacto</h2>
-
-        <div class="editorial-mockup-arrangement reveal-fade">
-            <!-- Visual Principal de Gran Escala -->
-            <div class="mockup-frame-large">
-                <img src="img/stationery_mockup.jpg" alt="Papelería y Guía Corporativa NOVA">
-                <div class="d-flex justify-content-between font-tech text-muted pt-3" style="font-size:0.75rem;">
-                    <span>FIG. 01 — PAPELERÍA CORPORATIVA EN CARTULINA TEXTURIZADA</span>
-                    <span>OFFSET DE PRECISIÓN</span>
-                </div>
-            </div>
-
-            <!-- Visual Secundario y Narrativa Asimétrica -->
-            <div class="mockup-editorial-stack">
-                <div class="mockup-story-text">
-                    <h3>Materialidad & Producción</h3>
-                    <p>
-                        La identidad visual de NOVA cobra vida a través de papeles de alto gramaje, algodón crudo ecológico y empaques en cartón rígido con acabados sobrios libres de brillo artificial.
-                    </p>
+            <div class="container-fluid px-lg-5">
+                <div class="row mb-5 align-items-end">
+                    <div class="col-12 col-lg-8">
+                        <span class="nova-eyebrow">02 / BENEFICIOS FUNDAMENTALES</span>
+                        <h2 class="nova-h2-section text-white">Por qué NOVA transforma tu presencia.</h2>
+                    </div>
+                    <div class="col-12 col-lg-4 text-lg-end">
+                        <p class="nova-meta text-gray-dark mb-0">DISEÑO ANATÓMICO // SIN COMPROMISOS</p>
+                    </div>
                 </div>
 
-                <div class="mockup-frame-secondary">
-                    <img src="img/packaging_tote.jpg" alt="Packaging y Tote Bag NOVA">
-                    <div class="d-flex justify-content-between font-tech text-muted pt-2" style="font-size:0.72rem;">
-                        <span>FIG. 02 — PACKAGING Y TOTE TEXTIL</span>
-                        <span>SERIGRAFÍA PURA</span>
+                <!-- Composiciones Asimétricas en 12 Columnas (No tarjetas repetitivas) -->
+                <div class="row g-4 mb-4">
+                    <!-- Beneficio 01: Gran Franja de Alto Impacto (8 Columnas) -->
+                    <div class="col-12 col-lg-8 reveal-fade">
+                        <div class="benefit-tile benefit-tile-dark">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="benefit-num">01</div>
+                                <span class="nova-meta text-red">[ ESPECIFICACIÓN TÉCNICA ]</span>
+                            </div>
+                            <h3 class="nova-h3-title text-white mb-3">
+                                Arquitectura Ergonómica & Tejidos de Alto Rendimiento
+                            </h3>
+                            <p class="nova-body">
+                                Cada costura y cada corte asimétrico responden a la cinemática natural del cuerpo en movimiento. Utilizamos algodones peinados pesados de <strong>320 GSM</strong> con acabado hidrófugo y refuerzos en puntos de tensión mecánica. Es una prenda con estructura inquebrantable, transpirabilidad total y una vida útil 4 veces mayor que la confección comercial.
+                            </p>
+                            <div class="benefit-spec-tag">
+                                RENDIMIENTO CERTIFICADO // 320 GSM // REPELENCIA AL AGUA // TERMOSELLADO
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Editorial Complementario (4 Columnas) -->
+                    <div class="col-12 col-lg-4 reveal-fade delay-1">
+                        <div class="brandbook-photo-plate h-100" style="min-height: 290px;">
+                            <span class="plate-corner-cross tl">+</span>
+                            <span class="plate-corner-cross tr">+</span>
+                            <div class="plate-header-meta">
+                                <span>[ MACRO ESPECIFICACIÓN ]</span>
+                                <span class="text-red">320 GSM</span>
+                            </div>
+                            <img src="img/nova-hoodie-texture.jpg" alt="Macro Textura 320 GSM — Algodón Peinado y Etiqueta Oficial NOVA" loading="lazy">
+                            <div class="plate-footer-caption">
+                                <span>TEJIDO PEINADO & COSTURA REFORZADA</span>
+                                <span class="text-red">FIG. 02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda Fila Asimétrica -->
+                <div class="row g-4 mb-4">
+                    <!-- Beneficio 02: Bloque Cromático Rojo Protagónico (5 Columnas) -->
+                    <div class="col-12 col-lg-5 reveal-fade">
+                        <div class="benefit-tile benefit-tile-red">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="benefit-num">02</div>
+                                <span class="nova-meta">[ LOTE LIMITADO ]</span>
+                            </div>
+                            <h3 class="nova-h3-title text-white mb-3">
+                                Producción Limitada & Cero Fast-Fashion
+                            </h3>
+                            <p class="nova-body">
+                                Producimos en series pequeñas y numeradas para erradicar la sobreproducción masiva. Cuando adquieres una pieza NOVA, tienes la certeza absoluta de vestir una edición reservada que jamás verás repetida en cada esquina.
+                            </p>
+                            <div class="benefit-spec-tag">
+                                EDICIÓN LIMITADA NUMERADA // SERIE 2026 // CERO STOCK MASIVO
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beneficio 03: Autoridad y Pureza Visual (7 Columnas) -->
+                    <div class="col-12 col-lg-7 reveal-fade delay-1">
+                        <div class="benefit-tile benefit-tile-dark d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="benefit-num">03</div>
+                                    <span class="nova-meta text-red">[ IMPACTO VISUAL ]</span>
+                                </div>
+                                <h3 class="nova-h3-title text-white mb-3">
+                                    Autoridad Silenciosa: Presencia Sin Logotipos Gigantes
+                                </h3>
+                                <p class="nova-body mb-3">
+                                    La elegancia contemporánea no necesita estampar marcas monstruosas en el pecho para demostrar valor. NOVA proyecta sofisticación mediante la pureza de sus proporciones, el rigor de su caída textil y un contraste cromático negro, rojo y blanco que captura miradas de inmediato.
+                                </p>
+                            </div>
+                            <div class="row align-items-center mt-3 pt-3 border-top border-secondary-subtle g-3">
+                                <div class="col-12 col-sm-4">
+                                    <div class="brandbook-photo-plate" style="height: 105px;">
+                                        <span class="plate-corner-cross tl">+</span>
+                                        <img src="img/nova-lifestyle-street.jpg" alt="Silueta urbana streetwear NOVA en calle brutalista" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <div class="benefit-spec-tag mt-0 pt-0 border-0">
+                                        FIG. 03 // SILUETA STREETWEAR ASIMÉTRICA: CAÍDA LIMPIA Y CAPUCHA ESTRUCTURADA
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra de Garantía Asimétrica a Todo el Ancho -->
+                <div class="row mt-4">
+                    <div class="col-12 reveal-fade">
+                        <div class="benefit-guarantee-bar">
+                            <div>
+                                <span class="text-red fw-bold">04 // COMPROMISO TOTAL:</span>
+                                <span>30 DÍAS DE GARANTÍA DE AJUSTE ANATÓMICO Y CAMBIO DE TALLAJE SIN COSTO ADICIONAL.</span>
+                            </div>
+                            <a href="#hero-form" class="text-red text-decoration-none fw-bold">SOLICITAR ASESORÍA DE TALLA →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             04 — CTA PRINCIPAL (RUPTURA CROMÁTICA / MANIFIESTO EN ACCIÓN)
+        ====================================================== -->
+        <section id="cta-principal" class="brandbook-spread cta-spread" data-chapter="03 / 08">
+            <span class="corner-spec top-right text-white">[ 03 // MANIFIESTO ]</span>
+
+            <div class="container-fluid px-lg-5">
+                <div class="row align-items-center justify-content-between g-4">
+                    <div class="col-12 col-xl-8 reveal-fade">
+                        <span class="nova-eyebrow text-white mb-3" style="color: #FFFFFF !important;">
+                            03 / EL MOMENTO ES AHORA
+                        </span>
+                        <h2 class="cta-title-giant mb-3">
+                            El verdadero cambio<br>
+                            no se espera:<br>
+                            se viste hoy.
+                        </h2>
+                        <p class="cta-lead-text mb-4">
+                            Los cupos de confección asignados para el primer lote de 2026 se completan por orden de solicitud. Da el siguiente paso y asegura tu acceso directo al catálogo antes de que se agoten las tallas disponibles.
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-xl-4 text-xl-end reveal-fade delay-1">
+                        <a href="#hero-form" class="btn-cta-monumental" id="btnCtaIntermedio">
+                            <span>RESERVAR MI ACCESO AHORA</span>
+                            <span aria-hidden="true">↓</span>
+                        </a>
+                        <p class="nova-meta mt-3" style="color: rgba(255,255,255,0.8);">
+                            ATENCIÓN INMEDIATA VÍA WHATSAPP // ASESORÍA GRATUITA
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- =====================================================
+             05 — SOCIAL PROOF (OBLIGATORIO ANTES DE EXPLICACIÓN)
+        ====================================================== -->
+        <section id="social-proof" class="brandbook-spread social-proof-spread" data-chapter="04 / 08">
+            <span class="corner-spec top-left">[ 04 // LOOKBOOK & SOCIAL PROOF ]</span>
+
+            <div class="container-fluid px-lg-5">
+                <div class="row mb-4 align-items-end">
+                    <div class="col-12 col-lg-8">
+                        <span class="nova-eyebrow">04 / EXPERIENCIA DE PRODUCTO & CAMPAÑA</span>
+                        <h2 class="nova-h2-section text-white">Cómo se vive la experiencia NOVA.</h2>
+                    </div>
+                    <div class="col-12 col-lg-4 text-lg-end">
+                        <span class="demo-tag-badge">[ MAQUETA ILUSTRATIVA // MODELOS IA ]</span>
+                    </div>
+                </div>
+
+                <!-- Aviso de Transparencia de Marca -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="demo-disclaimer-box">
+                            <span class="text-red fw-bold">NOTA DE TRANSPARENCIA:</span>
+                            Fotografías editoriales generadas con Inteligencia Artificial como contenido ilustrativo de prelanzamiento para modelar el producto y el unboxing. Las reseñas corresponden a ejemplos demostrativos de experiencia de usuario antes de la apertura del lote oficial.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Composiciones Asimétricas con Fotografía de Campaña Real -->
+                <div class="row g-4 align-items-stretch">
+                    
+                    <!-- Reseña Demo 01: Modelo Lifestyle en Estudio (7 Columnas) -->
+                    <div class="col-12 col-lg-7 reveal-fade">
+                        <div class="demo-card-lead">
+                            <div class="row g-0 h-100 align-items-center">
+                                <div class="col-12 col-md-6 h-100">
+                                    <div class="demo-img-frame h-100" style="min-height: 280px;">
+                                        <img src="img/nova-customer-demo.jpg" alt="Persona vistiendo buzo hoodie NOVA en estudio creativo" class="img-fluid h-100 w-100" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 p-4 p-lg-5 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="demo-tag-badge">RESEÑA DEMO</span>
+                                            <span class="text-red" aria-label="5 de 5">★★★★★</span>
+                                        </div>
+                                        <p class="demo-quote-text mb-3">
+                                            “El hoodie se siente estructurado y pesado desde el primer momento. La caída asimétrica no se deforma tras horas de uso continuo.”
+                                        </p>
+                                    </div>
+                                    <div class="demo-client-meta pt-3 border-top border-secondary-subtle">
+                                        CLIENTE DEMO 01 // REF. AMBIENTE CREATIVO
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña Demo 02: Experiencia de Recepción & Unboxing (5 Columnas) -->
+                    <div class="col-12 col-lg-5 reveal-fade delay-1">
+                        <div class="demo-card-lead">
+                            <div class="row g-0 h-100 align-items-center">
+                                <div class="col-12 col-md-5 h-100">
+                                    <div class="demo-img-frame h-100" style="min-height: 280px;">
+                                        <img src="img/nova-person-receiving.jpg" alt="Persona recibiendo el paquete y packaging rígido de NOVA" class="img-fluid h-100 w-100" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-7 p-4 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="demo-tag-badge">UNBOXING DEMO</span>
+                                            <span class="text-red" aria-label="5 de 5">★★★★★</span>
+                                        </div>
+                                        <p class="demo-quote-text mb-3">
+                                            “El empaque rígido y la presentación en caja llegaron impecables. La textura del algodón 320 GSM responde a la ficha técnica.”
+                                        </p>
+                                    </div>
+                                    <div class="demo-client-meta pt-3 border-top border-secondary-subtle">
+                                        CLIENTE DEMO 02 // REF. EXPERIENCIA ENTREGA
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Segunda Fila Asimétrica de Social Proof -->
+                <div class="row g-4 mt-2">
+                    <!-- Reseña Demo 03: Streetwear en Calle Urbana (5 Columnas) -->
+                    <div class="col-12 col-lg-5 reveal-fade">
+                        <div class="demo-card-lead">
+                            <div class="row g-0 h-100 align-items-center">
+                                <div class="col-12 col-md-5 h-100">
+                                    <div class="demo-img-frame h-100" style="min-height: 240px;">
+                                        <img src="img/nova-lifestyle-street.jpg" alt="Estilo urbano contemporáneo vistiendo hoodie negro NOVA" class="img-fluid h-100 w-100" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-7 p-4 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="demo-tag-badge">LIFESTYLE DEMO</span>
+                                            <span class="text-red">★★★★★</span>
+                                        </div>
+                                        <p class="demo-quote-text mb-3" style="font-size: 0.98rem;">
+                                            “Una prenda urbana con presencia real en la calle sin tener que exhibir logotipos gigantescos. Corte limpio y capucha estructurada.”
+                                        </p>
+                                    </div>
+                                    <div class="demo-client-meta pt-2 border-top border-secondary-subtle">
+                                        CLIENTE DEMO 03 // REF. ENTORNO URBANO
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ficha de Compromiso Editorial & CTA Directo (7 Columnas) -->
+                    <div class="col-12 col-lg-7 reveal-fade delay-1">
+                        <div class="p-4 p-lg-5 h-100 d-flex flex-column justify-content-between" style="background: var(--nova-black); border: 1px solid var(--border-light);">
+                            <div>
+                                <span class="nova-meta text-red mb-2 d-block">[ TRANSPARENCIA COMERCIAL ]</span>
+                                <h3 class="nova-h3-title text-white mb-3">
+                                    Sin testimonios inflados. Prueba tu pieza durante 30 días.
+                                </h3>
+                                <p class="nova-body mb-4">
+                                    En NOVA no compramos reseñas ni inventamos perfiles ficticios para forzar una venta. Confiamos tanto en la ingeniería de nuestro patronaje y la densidad textil de 320 GSM que te ofrecemos una <strong>garantía de satisfacción total de 30 días</strong>: si la prenda no cumple tu estándar de caída, ajuste o acabado, gestionamos el cambio o reembolso inmediato.
+                                </p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-3 align-items-center">
+                                <a href="#hero-form" class="btn-submit-hero d-inline-flex" style="width: auto; padding: 12px 28px;">
+                                    SOLICITAR MI ACCESO Y PROBAR →
+                                </a>
+                                <span class="nova-meta text-gray-dark">POLÍTICA DE CAMBIO SIN COSTO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             06 — EXPLICACIÓN (OBLIGATORIO DESPUÉS DE SOCIAL PROOF Y ANTES DE FAQ)
+        ====================================================== -->
+        <section id="explicacion" class="brandbook-spread explanation-spread" data-chapter="05 / 08">
+            <span class="corner-spec top-right">[ 05 // RECORRIDO METÓDICO ]</span>
+
+            <div class="container-fluid px-lg-5">
+                <div class="row mb-5 align-items-end">
+                    <div class="col-12 col-lg-8">
+                        <span class="nova-eyebrow">05 / CÓMO FUNCIONA NOVA</span>
+                        <h2 class="nova-h2-section text-white">Tu recorrido en 4 pasos sencillos.</h2>
+                    </div>
+                    <div class="col-12 col-lg-4 text-lg-end">
+                        <p class="nova-meta text-gray-dark mb-0">PROCESO TRANSPARENTE // CERO FRICCIÓN</p>
+                    </div>
+                </div>
+
+                <!-- Secuencia Visual Conectada (Timeline Editorial) -->
+                <div class="row g-4">
+                    <!-- Paso 01 -->
+                    <div class="col-12 col-md-6 col-lg-3 reveal-fade">
+                        <div class="process-step-editorial">
+                            <div>
+                                <div class="step-num-display">01</div>
+                                <h3 class="step-title">SOLICITUD & ASESORÍA</h3>
+                                <p class="nova-body">
+                                    Completas el formulario de acceso en 60 segundos. Un especialista de NOVA analiza tu perfil y te envía el catálogo privado con precios preferenciales de preventa.
+                                </p>
+                            </div>
+                            <div class="step-meta-indicator">
+                                PASO 01 // DIGITAL DIRECTO
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 02 -->
+                    <div class="col-12 col-md-6 col-lg-3 reveal-fade delay-1">
+                        <div class="process-step-editorial">
+                            <div>
+                                <div class="step-num-display">02</div>
+                                <h3 class="step-title">TALLAJE MILIMÉTRICO</h3>
+                                <p class="nova-body">
+                                    Escoges tu prenda o accesorio preferido. Te asistimos con nuestra guía de patronaje anatómico para verificar contornos y garantizar un calce exacto sin margen de error.
+                                </p>
+                            </div>
+                            <div class="step-meta-indicator">
+                                PASO 02 // CONFIRMACIÓN EXACTA
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 03 -->
+                    <div class="col-12 col-md-6 col-lg-3 reveal-fade delay-2">
+                        <div class="process-step-editorial">
+                            <div>
+                                <div class="step-num-display">03</div>
+                                <h3 class="step-title">CONTROL DE CALIDAD</h3>
+                                <p class="nova-body">
+                                    Tu pieza es procesada en taller con costuras termoselladas e inspección minuciosa. Se empaca en caja rígida protectora con certificado de autenticidad de la serie.
+                                </p>
+                            </div>
+                            <div class="step-meta-indicator">
+                                PASO 03 // RIGOR ARTESANAL
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 04 -->
+                    <div class="col-12 col-md-6 col-lg-3 reveal-fade delay-3">
+                        <div class="process-step-editorial">
+                            <div>
+                                <div class="step-num-display">04</div>
+                                <h3 class="step-title">ENTREGA & GARANTÍA</h3>
+                                <p class="nova-body">
+                                    Recibes en tu puerta con operador logístico de alta prioridad. Cuentas con 30 días continuos de garantía total para cambio de talla o ajuste sin complicaciones.
+                                </p>
+                            </div>
+                            <div class="step-meta-indicator">
+                                PASO 04 // SATISFACCIÓN 100%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Despliegue Visual del Unboxing y Packaging de Marca -->
+                <div class="row mt-4 pt-2 reveal-fade">
+                    <div class="col-12">
+                        <div class="unboxing-hero-banner">
+                            <img src="img/nova-unboxing-package.jpg" alt="Apertura del Packaging Rígido y Buzo Hoodie NOVA" class="img-fluid w-100" loading="lazy">
+                            <div class="unboxing-meta-strip">
+                                <div>
+                                    <span class="text-red fw-bold">FIG. 04 // PROTOCOLO DE APERTURA:</span>
+                                    <span>CAJA RÍGIDA MATE, PAPEL TÉCNICO PROTECTOR Y SELLO DE CERA ROJO.</span>
+                                </div>
+                                <span class="nova-meta text-gray-dark">[ PACKAGING EDITORIAL OFICIAL ]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resumen Rápido de Conversión -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center reveal-fade">
+                        <a href="#hero-form" class="btn-submit-hero d-inline-flex" style="width: auto; padding: 14px 36px;">
+                            INICIAR MI PASO 01 AHORA →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             07 — PREGUNTAS FRECUENTES (FAQ ACCESIBLE / ACORDEÓN)
+        ====================================================== -->
+        <section id="faq" class="brandbook-spread faq-spread" data-chapter="06 / 08">
+            <span class="corner-spec top-left">[ 06 // FAQ & TRANSPARENCIA ]</span>
+
+            <div class="container-fluid px-lg-5">
+                <div class="row mb-5 align-items-end">
+                    <div class="col-12 col-lg-8">
+                        <span class="nova-eyebrow">06 / PREGUNTAS FRECUENTES</span>
+                        <h2 class="nova-h2-section text-white">Claridad total antes de dar el paso.</h2>
+                    </div>
+                    <div class="col-12 col-lg-4 text-lg-end">
+                        <p class="nova-meta text-gray-dark mb-0">ACCESIBILIDAD // SIN LETRA PEQUEÑA</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="faq-accordion-group" role="region" aria-label="Preguntas Frecuentes NOVA">
+
+                            <!-- Pregunta 01 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
+                                    <span>¿Qué es exactamente NOVA y qué la diferencia de otras marcas?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+                                    <div class="faq-content-inner">
+                                        NOVA es una plataforma de diseño y confección de indumentaria urbana técnica contemporánea. A diferencia del fast fashion convencional, desarrollamos producciones en series numeradas de bajo volumen, empleando patrones anatómicos asimétricos y tejidos pesados de 320 GSM con acabados de alta resistencia. Diseñamos armaduras sobrias pensadas para durar años, no piezas desechables de temporada.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 02 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+                                    <span>¿Qué ocurre exactamente después de que dejo mis datos en el formulario?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+                                    <div class="faq-content-inner">
+                                        De inmediato recibes un correo con el catálogo privado de la colección 2026. Además, en un lapso de menos de 2 horas hábiles, un asesor de diseño de NOVA te escribirá por WhatsApp para resolver dudas sobre piezas, disponibilidad de tallas y apoyarte en tu elección. Registrar tus datos no genera ningún compromiso de compra.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 03 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+                                    <span>¿Cómo sé cuál es mi talla correcta si compro a distancia?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+                                    <div class="faq-content-inner">
+                                        Contamos con una tabla anatómica milimétrica que mide contorno de pecho, ancho de hombros, largo de mangas y cintura. Además, nuestro equipo de atención evalúa tu estatura, contextura y preferencia de calce (oversized estructurado o regular fit) para indicarte la talla exacta antes de enviar cualquier prenda.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 04 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+                                    <span>¿Cuáles son los tiempos y costos de entrega?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+                                    <div class="faq-content-inner">
+                                        Los envíos en Bogotá se entregan en 24 a 48 horas hábiles. En ciudades principales como Medellín, Cali y Barranquilla, el tiempo promedio es de 2 a 3 días hábiles mediante transporte prioritario asegurado. Para órdenes del catálogo preventa, el envío es 100% gratuito a cualquier destino nacional.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 05 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+                                    <span>¿Qué garantía tengo si la prenda no me convence o requiero un cambio?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+                                    <div class="faq-content-inner">
+                                        Cuentas con 30 días calendario a partir del momento de recepción para solicitar un cambio de talla sin ningún recargo adicional o solicitar la devolución del 100% de tu dinero. La prenda solo debe conservarse sin signos de uso exterior y con su empaque original.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 06 -->
+                            <div class="faq-item">
+                                <button class="faq-trigger" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
+                                    <span>¿Mis datos personales se encuentran protegidos y seguros?</span>
+                                    <span class="faq-icon-cross" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-content" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+                                    <div class="faq-content-inner">
+                                        Absolutamente. En cumplimiento estricto con la Ley 1581 de 2012 de Protección de Datos Personales, tu información es tratada con protocolos de encriptación de última generación. Nunca comercializamos, alquilamos ni transferimos tus datos a terceros. Solo se emplean para atender tu solicitud en NOVA.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             08 — PREFOOTER (ÚLTIMO LLAMADO A LA ACCIÓN / ALTO IMPACTO)
+        ====================================================== -->
+        <section id="prefooter" class="brandbook-spread prefooter-spread" data-chapter="07 / 08">
+            <span class="corner-spec top-right">[ 07 // CIERRE COMERCIAL ]</span>
+
+            <div class="container-fluid px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-11">
+                        <div class="prefooter-box reveal-fade">
+                            <div class="row align-items-center g-4">
+                                <div class="col-12 col-lg-7">
+                                    <span class="nova-eyebrow">07 / ACCESO FINAL</span>
+                                    <h2 class="nova-h2-section text-white mb-3">
+                                        No postergues la decisión<br>
+                                        de vestir con autoridad.
+                                    </h2>
+                                    <p class="nova-lead mb-4">
+                                        La diferencia entre lo genérico y lo memorable radica en las piezas que decides portar. Accede hoy al drop privado antes de que concluya la asignación de cupos del lote 2026.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-3 mb-4 mb-lg-0">
+                                        <span class="nova-meta text-gray-dark">✓ ASESORÍA POR WHATSAPP</span>
+                                        <span class="nova-meta text-gray-dark">✓ 30 DÍAS DE GARANTÍA</span>
+                                        <span class="nova-meta text-gray-dark">✓ CERO COSTOS OCULTOS</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-5">
+                                    <div class="position-relative overflow-hidden" style="border: 1px solid var(--border-light); background: var(--nova-black);">
+                                        <img src="img/nova-hoodie-hero.jpg" alt="Buzo Hoodie NOVA — Edición Limitada 2026" class="img-fluid w-100" style="height: 160px; object-fit: cover; opacity: 0.8;" loading="lazy">
+                                        <div class="p-3 text-center" style="background: var(--nova-black-soft); border-top: 1px solid var(--border-light);">
+                                            <a href="#hero-form" class="btn-prefooter-action w-100 justify-content-center" id="btnPrefooterAction">
+                                                <span>COMPLETAR REGISTRO AHORA</span>
+                                                <span aria-hidden="true">↑</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 
     <!-- =====================================================
-         SECCIÓN 09 — 08 / DIGITAL (UI SYSTEM SPECIMEN)
+         09 — FOOTER (CONTRAPORTADA DE BRANDBOOK & CONTACTO)
     ====================================================== -->
-    <section id="digital" class="brandbook-spread digital-spread" data-chapter="08 / 09" data-nav-style="light">
-        <div class="d-flex justify-content-between align-items-baseline flex-wrap">
-            <div>
-                <span class="chapter-tag">08 / DIGITAL</span>
-                <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Sistema de Interfaz</h2>
-            </div>
-            <p class="font-tech text-muted mb-0">COMPONENTES EDITORIALES DE UI</p>
-        </div>
+    <footer class="editorial-footer" id="footer" data-chapter="08 / 08">
+        <span class="corner-spec bottom-right">[ FIN DE EDICIÓN // 2026 ]</span>
 
-        <div class="ui-specimen-strip reveal-fade">
-            <!-- Botones Primarios -->
-            <div class="ui-specimen-group">
-                <span>01 // ACCIONES PRIMARIAS</span>
-                <div class="d-flex gap-3 flex-wrap">
-                    <button class="nova-editorial-btn btn-solid-noir" type="button">ACCION NOIR</button>
-                    <button class="nova-editorial-btn btn-outline-noir" type="button">CONTORNO</button>
-                    <button class="nova-editorial-btn btn-solid-lime" type="button">ACENTO VOLT</button>
+        <div class="container-fluid px-lg-5">
+            <!-- Fila Principal de Columnas -->
+            <div class="row g-4 g-lg-5">
+                
+                <!-- Columna 1: Identidad & Manifiesto (4 cols) -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <svg class="nova-logo-svg footer-logo-svg" viewBox="0 0 280 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo NOVA">
+                        <path d="M0 56V4h14.8l27.6 34.8V4H56v52H41.2L13.6 21.2V56H0z"/>
+                        <path d="M102 57c-17.5 0-31.5-12.8-31.5-29S84.5-1 102-1s31.5 12.8 31.5 29-14 29-31.5 29zm0-13.2c9.8 0 17.5-7 17.5-15.8S111.8 12.2 102 12.2s-17.5 7-17.5 15.8 7.7 15.8 17.5 15.8z"/>
+                        <path d="M140 4h14.8l18.6 38.6L192 4h14.8L180.5 56h-14.2L140 4z"/>
+                        <path d="M242 4h14.2l23.8 52h-15.2l-5.6-13h-20.4l-5.6 13H218L242 4zm12.6 26.6l-6.8-15.6-6.8 15.6h13.6z"/>
+                    </svg>
+                    <p class="nova-body mb-3">
+                        Sistema de Identidad Visual & Colección de Indumentaria Urbana Técnica Contemporánea. Producción consciente, diseño de precisión geométrica y dirección de arte editorial.
+                    </p>
+                    <p class="nova-meta text-gray-dark">
+                        BOGOTÁ, COLOMBIA // COORD: 4°35'N 74°04'W
+                    </p>
+                </div>
+
+                <!-- Columna 2: Medios de Contacto Directo (3 cols) -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h3 class="footer-col-title">CONTACTO DIRECTO</h3>
+                    <div class="footer-contact-item">
+                        LÍNEA TELEFÓNICA:<br>
+                        <a href="tel:+576013906682">+57 (601) 390-NOVA</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        WHATSAPP OFICIAL:<br>
+                        <a href="https://wa.me/573000000000" target="_blank" rel="noopener">+57 (300) 000-NOVA</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        CORREO ELECTRÓNICO:<br>
+                        <a href="mailto:contacto@novabrand.co">contacto@novabrand.co</a>
+                    </div>
+                    <div class="footer-contact-item text-gray-dark">
+                        HORARIO DE ATENCIÓN:<br>
+                        LUN – SÁB // 09:00 — 19:00 COT
+                    </div>
+                </div>
+
+                <!-- Columna 3: Transparencia & Legal (3 cols) -->
+                <div class="col-12 col-md-6 col-lg-3" id="politica-datos">
+                    <h3 class="footer-col-title">TRANSPARENCIA & LEGAL</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#hero-form">Tratamiento de Datos (Ley 1581)</a></li>
+                        <li><a href="#faq">Términos & Condiciones de Compra</a></li>
+                        <li><a href="#beneficios">Garantía y Ajuste Anatómico</a></li>
+                        <li><a href="#explicacion">Trazabilidad y Producción Ética</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Cierre Alternativo (2 cols) -->
+                <div class="col-12 col-md-6 col-lg-2">
+                    <h3 class="footer-col-title">¿NO ES EL MOMENTO?</h3>
+                    <p class="nova-body mb-3" style="font-size: 0.85rem;">
+                        Guarda nuestro contacto o escríbenos directamente por WhatsApp para mantenerte informado sobre los próximos lanzamientos.
+                    </p>
+                    <a href="https://wa.me/573000000000" class="text-red fw-bold text-decoration-none nova-meta" target="_blank" rel="noopener">
+                        ESCRIBIR AL WHATSAPP →
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Fila Inferior de Copyright y Retorno -->
+            <div class="row align-items-center footer-bottom-bar">
+                <div class="col-12 col-md-8">
+                    <p class="nova-meta text-gray-dark mb-0">
+                        © 2026 NOVA BRAND // TODOS LOS DERECHOS RESERVADOS // SISTEMA DE IDENTIDAD & ALTA CONVERSIÓN
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="#hero" class="text-white text-decoration-none nova-meta">
+                        ↑ VOLVER A PORTADA
+                    </a>
                 </div>
             </div>
-
-            <!-- Campos de Entrada -->
-            <div class="ui-specimen-group" style="min-width:280px; flex:1; max-width:480px;">
-                <span>02 // CAMPOS TIPOGRÁFICOS</span>
-                <input type="text" class="nova-input-field" placeholder="Buscar en el catálogo..." value="PRENDAS TÉCNICAS NOVA">
-            </div>
-
-            <!-- Indicadores de Estado -->
-            <div class="ui-specimen-group">
-                <span>03 // ESTADOS DE SISTEMA</span>
-                <div class="d-flex gap-2">
-                    <span class="font-tech py-2 px-3 bg-dark text-white" style="font-size:0.75rem;">LIVE SPEC</span>
-                    <span class="font-tech py-2 px-3 border border-dark" style="font-size:0.75rem;">V1.0 GLOBAL</span>
-                </div>
-            </div>
         </div>
-    </section>
+    </footer>
 
 
-    <!-- =====================================================
-         SECCIÓN 10 — 09 / VOICE (TONO Y DIRECTRICES VERBALES)
-    ====================================================== -->
-    <section id="voz" class="brandbook-spread voice-spread" data-chapter="09 / 09" data-nav-style="light">
-        <span class="chapter-tag">09 / VOICE</span>
-        <h2 class="display-3 fw-bold" style="letter-spacing:-0.04em;">Voz y Lenguaje</h2>
-        <p class="lead" style="max-width:680px; color:var(--c-gray-600);">
-            Cómo se expresa NOVA en redacción editorial, comunicación digital y campañas de producto.
-        </p>
-
-        <div class="voice-editorial-strip reveal-fade">
-            <!-- WE SAY -->
-            <div class="voice-column">
-                <span class="voice-col-kicker">LO QUE DECIMOS</span>
-                <div class="voice-giant-words">
-                    CLARO.<br>
-                    DIRECTO.<br>
-                    HUMANO.<br>
-                    SEGURO.
-                </div>
-            </div>
-
-            <!-- WE DON'T SAY -->
-            <div class="voice-column">
-                <span class="voice-col-kicker" style="color:var(--c-gray-400);">LO QUE EVITAMOS</span>
-                <div class="voice-giant-words" style="color:var(--c-gray-400);">
-                    COMPLICADO.<br>
-                    EXAGERADO.<br>
-                    GENÉRICO.<br>
-                    RUIDOSO.
-                </div>
-            </div>
-
-            <!-- OUR TONE -->
-            <div class="voice-column voice-tone-col">
-                <span class="voice-col-kicker" style="color:var(--c-lime);">NUESTRO TONO</span>
-                <div class="voice-giant-words voice-giant-words tone-lime">
-                    MINIMALISTA.<br>
-                    INTELIGENTE.<br>
-                    CERCANO.<br>
-                    CONTEMPORÁNEO.
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =====================================================
-         SECCIÓN 11 — 10 / CIERRE (FINAL MONUMENTAL)
-    ====================================================== -->
-    <section id="cierre" class="brandbook-spread cierre-spread" data-chapter="FINAL" data-nav-style="dark">
-        <span class="corner-spec top-right" style="color:rgba(255,255,255,0.4);">[ FIN DEL MANUAL // 2026 ]</span>
-
-        <div class="my-auto py-5 reveal-fade">
-            <span class="cierre-monumental-title">NOVA</span>
-            <div class="cierre-sub-quote">
-                "THE FUTURE IS IN MOTION."
-            </div>
-        </div>
-
-        <div class="cierre-studio-colophon">
-            <div>
-                <p class="mb-1 fw-bold text-white">MANUAL DE IDENTIDAD VISUAL NOVA — 2026</p>
-                <p class="mb-0">DISEÑO Y DIRECCIÓN DE ARTE // PROYECTO ACADÉMICO</p>
-            </div>
-            <div>
-                <a href="#portada" class="cierre-top-link">↑ VOLVER A PORTADA</a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Botón volver arriba flotante -->
+    <!-- Botón Flotante Volver Arriba -->
     <button id="backToTop" class="editorial-top-btn" aria-label="Volver arriba">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
     </button>
 
 
-    <!-- Script de Control del Brandbook Digital -->
+    <!-- Bootstrap 5 Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Script de Control Editorial y Conversión de NOVA -->
     <script src="js/script.js"></script>
 
 </body>
